@@ -1,0 +1,16 @@
+# Wavefront MTL file
+# Creator: Ultimate Unwrap3D Pro v3.44
+# URL: http://www.unwrap3d.com
+# Time: Mon May 06 19:19:33 2013
+# num_materials: 1
+
+newmtl pipelinemat
+Ka 0.300000 0.300000 0.300000
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+d 1.000000
+illum 2
+Ns 0.000000
+map_Kd pipeline_tex_dark.png
+
+# num_materials: 1
