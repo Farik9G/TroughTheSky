@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading;
+using TMPro;
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using static System.IO.File;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 public class foods1 : MonoBehaviour
 {
     public Image ifood1;
-    private float starfood1 = 25f;
-    public float food1 = 0f;
+    private float starfood1 = 0f;
+    public static float food1 = 0f;
     // Start is called before the first frame update
     void Start()
     {

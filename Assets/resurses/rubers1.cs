@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading;
+using TMPro;
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using static System.IO.File;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 
 public class rubers1 : MonoBehaviour
 {
-    private float starrubber1 = 25f;
-    public float rubber1 = 0f;
+    private float starrubber1 = 0f;
+    public static float rubber1 = 0f;
     public Image irubber1;
     // Start is called before the first frame update
     void Start()
