@@ -41,9 +41,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: bridges
-    uniqueID: 1275222821
-    locked: 0
-  - name: terrain
-    uniqueID: 4080959985
-    locked: 0
