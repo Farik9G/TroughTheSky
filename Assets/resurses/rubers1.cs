@@ -31,13 +31,11 @@ public class rubers1 : MonoBehaviour
     {
         if (rubber1 / 100 > irubber1.fillAmount)
         {
-            irubber1.fillAmount = irubber1.fillAmount + 0.01f;
-            Thread.Sleep(50);
+            irubber1.fillAmount = irubber1.fillAmount + 0.0005f;
         }
         if (rubber1 / 100 < irubber1.fillAmount)
         {
-            irubber1.fillAmount = irubber1.fillAmount - 0.01f;
-            Thread.Sleep(50);
+            irubber1.fillAmount = irubber1.fillAmount - 0.0005f;
         }
     }
 }

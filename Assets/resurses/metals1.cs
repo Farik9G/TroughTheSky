@@ -18,11 +18,9 @@ public class metals1 : MonoBehaviour
     private float starmetal1 = 0f;
     public static float metal1 = 0f;
     public Image imetal1;
-    
     // Start is called before the first frame update
     void Start() 
     {
-        
         metal1 = starmetal1;
         imetal1.fillAmount = starmetal1 / 100;
     }
@@ -33,13 +31,11 @@ public class metals1 : MonoBehaviour
         
         if (metal1 / 100 > imetal1.fillAmount)
         {
-            imetal1.fillAmount = imetal1.fillAmount + 0.01f;
-            Thread.Sleep(50);
+            imetal1.fillAmount = imetal1.fillAmount + 0.0005f;
         }
         if (metal1 / 100 < imetal1.fillAmount)
         {
-            imetal1.fillAmount = imetal1.fillAmount - 0.01f;
-            Thread.Sleep(50);
+            imetal1.fillAmount = imetal1.fillAmount - 0.0005f;
         }
         
     }
