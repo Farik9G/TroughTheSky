@@ -6,9 +6,15 @@ using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
+    public static int n = 0;
     public void PlayGame()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+    public void LoadGame()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        n = 1;
     }
 
     public void ExitGame()

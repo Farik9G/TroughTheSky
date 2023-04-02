@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 261.9007, g: 324.45554, b: 429.43463, a: 1}
+  m_IndirectSpecularColor: {r: 262.3369, g: 325.0498, b: 430.21924, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1483,6 +1483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502380507}
   - component: {fileID: 502380508}
+  - component: {fileID: 502380509}
   m_Layer: 0
   m_Name: StartButton
   m_TagString: Untagged
@@ -1556,7 +1557,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1426413881}
+      - m_Target: {fileID: 502380509}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
@@ -1568,6 +1569,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &502380509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502380506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161994279c10f784f9a5df88b8b36d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &507268586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,6 +2251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1004458250}
   - component: {fileID: 1004458251}
+  - component: {fileID: 1004458252}
   m_Layer: 0
   m_Name: QuitButton
   m_TagString: Untagged
@@ -2260,7 +2274,7 @@ RectTransform:
   - {fileID: 1744906179}
   - {fileID: 401003992}
   m_Father: {fileID: 1415824813}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2311,7 +2325,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1426413881}
+      - m_Target: {fileID: 1004458252}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -2323,6 +2337,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1004458252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004458249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161994279c10f784f9a5df88b8b36d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1019840661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,8 +3277,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 502380507}
-  - {fileID: 1004458250}
   - {fileID: 2134214445}
+  - {fileID: 1004458250}
   m_Father: {fileID: 1426413880}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3270,7 +3296,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1426413880}
-  - component: {fileID: 1426413881}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -3302,18 +3327,6 @@ RectTransform:
   m_AnchoredPosition: {x: -960, y: 540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1426413881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426413879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 161994279c10f784f9a5df88b8b36d18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1482790891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4273,6 +4286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134214445}
   - component: {fileID: 2134214446}
+  - component: {fileID: 2134214447}
   m_Layer: 0
   m_Name: LoadGame
   m_TagString: Untagged
@@ -4295,7 +4309,7 @@ RectTransform:
   - {fileID: 978070638}
   - {fileID: 383973970}
   m_Father: {fileID: 1415824813}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4346,15 +4360,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1426413879}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2134214447}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2134214447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134214444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161994279c10f784f9a5df88b8b36d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

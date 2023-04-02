@@ -30,7 +30,7 @@ public class metals1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         if (metal1 / 100 > imetal1.fillAmount)
         {
             imetal1.fillAmount = imetal1.fillAmount + 0.01f;
@@ -41,6 +41,6 @@ public class metals1 : MonoBehaviour
             imetal1.fillAmount = imetal1.fillAmount - 0.01f;
             Thread.Sleep(50);
         }
-
+        
     }
 }
