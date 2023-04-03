@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< Updated upstream
+=======
+  - name: terrain
+    uniqueID: 3585015107
+    locked: 0
+  - name: Cols
+    uniqueID: 714615525
+    locked: 0
+  - name: Player
+    uniqueID: 1075546611
+    locked: 0
+>>>>>>> Stashed changes
