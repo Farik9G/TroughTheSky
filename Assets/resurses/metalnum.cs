@@ -17,8 +17,6 @@ public class metalnum : MonoBehaviour
     public float metalnm = metals1.metal1;
     public TMP_Text myText;
     float n = 0;
-    public float interval = 10f;
-    int g = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,31 +30,15 @@ public class metalnum : MonoBehaviour
         metalnm = metals1.metal1;
         if (metalnm>n)
         {
-            if (g > 0)
-            {
-                g--;
-            }
-            else
-            {
-                n++;
-                myText.text = n.ToString();
-                g = 20;
-            }
+            n++;
+            myText.text = n.ToString();
         }
         if (metalnm < n)
         {
-            if (g > 0)
-            {
-                g--;
-            }
-            else
-            {
-                n--;
-                myText.text = n.ToString();
-                g = 20;
-            }
+            n--;
+            myText.text = n.ToString();
         }
-        
+
 
 
     }

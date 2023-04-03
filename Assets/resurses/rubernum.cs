@@ -17,7 +17,6 @@ public class rubernum : MonoBehaviour
     public float rubernm = rubers1.rubber1;
     public TMP_Text myText;
     float n = 0;
-    int g = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,29 +30,13 @@ public class rubernum : MonoBehaviour
         rubernm = rubers1.rubber1;
         if (rubernm > n)
         {
-            if (g > 0)
-            {
-                g--;
-            }
-            else
-            {
-                n++;
-                myText.text = n.ToString();
-                g = 20;
-            }
+            n++;
+            myText.text = n.ToString();
         }
         if (rubernm < n)
         {
-            if (g > 0)
-            {
-                g--;
-            }
-            else
-            {
-                n--;
-                myText.text = n.ToString();
-                g = 20;
-            }
+            n--;
+            myText.text = n.ToString();
         }
 
 

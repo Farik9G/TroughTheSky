@@ -17,7 +17,6 @@ public class woodnum : MonoBehaviour
     public float woodnm = woods1.wood1;
     public TMP_Text myText;
     float n = 0;
-    int g = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,29 +30,13 @@ public class woodnum : MonoBehaviour
         woodnm = woods1.wood1;
         if (woodnm > n)
         {
-            if (g > 0)
-            {
-                g--;
-            }
-            else
-            {
-                n++;
-                myText.text = n.ToString();
-                g = 20;
-            }
+            n++;
+            myText.text = n.ToString();
         }
         if (woodnm < n)
         {
-            if (g > 0)
-            {
-                g--;
-            }
-            else
-            {
-                n--;
-                myText.text = n.ToString();
-                g = 20;
-            }
+            n--;
+            myText.text = n.ToString();
         }
     }
 }

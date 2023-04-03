@@ -30,12 +30,14 @@ public class woods1 : MonoBehaviour
     {
         if (wood1 / 100 > iWood1.fillAmount)
         {
-            iWood1.fillAmount = iWood1.fillAmount + 0.0005f;
+            iWood1.fillAmount = iWood1.fillAmount + 0.01f;
+            Thread.Sleep(50);
         }
         if (wood1 / 100 < iWood1.fillAmount)
 
         {
-            iWood1.fillAmount = iWood1.fillAmount - 0.0005f;
+            iWood1.fillAmount = iWood1.fillAmount - 0.01f;
+            Thread.Sleep(50);
         }
     }
 }
