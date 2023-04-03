@@ -9,7 +9,7 @@ public class loadres : MonoBehaviour
     {
         if (MainMenu.n==1)
         {
-            SaveLoadManager.l1();
+            SaveLoadManager.lres();
             MainMenu.n--;
         }
     }
