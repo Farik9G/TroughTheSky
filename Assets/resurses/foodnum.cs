@@ -17,6 +17,7 @@ public class foodnum : MonoBehaviour
     public float foodnm = foods1.food1;
     public TMP_Text myText;
     float n = 0;
+    int g = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +31,29 @@ public class foodnum : MonoBehaviour
         foodnm = foods1.food1;
         if (foodnm > n)
         {
-            n++;
-            myText.text = n.ToString();
+            if (g > 0)
+            {
+                g--;
+            }
+            else
+            { 
+                n++;
+                myText.text = n.ToString();
+                g = 20;
+            }
         }
         if (foodnm < n)
         {
-            n--;
-            myText.text = n.ToString();
+            if (g > 0)
+            {
+                g--;
+            }
+            else
+            {
+                n--;
+                myText.text = n.ToString();
+                g = 20;
+            }
         }
     }
 }

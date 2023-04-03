@@ -1,12 +1,11 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-/// <summary>
-/// ///////////
-/// </summary>
+
 public  class SaveLoadManager :MonoBehaviour
 {
-    public GameObject player;
+
+    public  GameObject player;
     [System.Serializable]
     public class PlayerData
     {
@@ -33,12 +32,14 @@ public  class SaveLoadManager :MonoBehaviour
                 return new SurrogateVector3(rValue.x, rValue.y, rValue.z);
             }
         }
+
         public float metal;
         public float wood;
         public float rubber;
         public float food;
         public SurrogateVector3 position;
-        public PlayerData(float metal, float wood, float rubber, float food, SurrogateVector3 position)
+
+        public PlayerData(float metal, float wood, float rubber, float food , SurrogateVector3 position)
         {
             this.metal = metal;
             this.wood = wood;
@@ -97,7 +98,7 @@ public  class SaveLoadManager :MonoBehaviour
         foods1.food1 = playerData.food;
         player.transform.position = playerData.position;
 
-        
+
     }
     public static void lres()
     {

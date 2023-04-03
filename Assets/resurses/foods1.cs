@@ -30,13 +30,11 @@ public class foods1 : MonoBehaviour
     {
         if (food1 / 100 > ifood1.fillAmount)
         {
-            ifood1.fillAmount = ifood1.fillAmount + 0.01f;
-            Thread.Sleep(50);
+            ifood1.fillAmount = ifood1.fillAmount + 0.0005f;
         }
         if (food1 / 100 < ifood1.fillAmount)
         {
-            ifood1.fillAmount = ifood1.fillAmount - 0.01f;
-            Thread.Sleep(50);
+            ifood1.fillAmount = ifood1.fillAmount - 0.0005f;
         }
     }
 }
