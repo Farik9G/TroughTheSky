@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Terrain
+    uniqueID: 1683108955
+    locked: 0
+  - name: Cols
+    uniqueID: 1422119493
+    locked: 0
   - name: Player
     uniqueID: 1075546611
     locked: 0
