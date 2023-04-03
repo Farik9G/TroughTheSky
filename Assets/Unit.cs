@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-
+    [SerializeField]
     public string unitName;
 
     public int damage;
@@ -13,7 +13,7 @@ public class Unit : MonoBehaviour
     public int currentHP;
 
     public int dodgeValue;
-
+    [SerializeField]
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;
@@ -23,6 +23,7 @@ public class Unit : MonoBehaviour
         else
             return false;
     }
+
 
     public void Repair(int amount)
     {
