@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 public enum EnemyActionState { ATTACK, REPAIR }
@@ -162,10 +164,14 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             dialogueText.text = "Победа";
+            SystemBoss.n++;
+            SystemBoss.b = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "Поражение";
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + -2);
         }
     }
 
