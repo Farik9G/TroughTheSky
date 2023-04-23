@@ -30,13 +30,13 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
-
+        
     }
 
     private void Move(Vector2 direction)
     {
         if (CanMove(direction))
-            transform.position += (Vector3)direction;
+            transform.position += (Vector3)direction/2;
 
     }
 
