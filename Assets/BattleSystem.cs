@@ -11,8 +11,11 @@ public enum EnemyActionState { ATTACK, REPAIR }
 
 public class BattleSystem : MonoBehaviour
 {
-    public GameObject playerPrefab;
-    public GameObject enemyPrefab;
+    public float delayTime = 1f; // время задержки между нажатиями кнопок
+    private float lastClickTime = 0f; // время последнего нажатия кнопки
+
+    public static GameObject playerPrefab;
+    public static GameObject enemyPrefab;
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -39,10 +42,12 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        Vector3 playerPos = new Vector3(-0.85f, -0.11f, 0f);
+        GameObject playerGO = Instantiate(playerPrefab, playerPos, Quaternion.identity);
         playerUnit = playerGO.GetComponent<Unit>();
 
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        Vector3 enemyPos = new Vector3(0.91f, 0.56f, 0f);
+        GameObject enemyGO = Instantiate(enemyPrefab, enemyPos, Quaternion.identity);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = "Ваш враг " + enemyUnit.unitName;
@@ -108,26 +113,43 @@ public class BattleSystem : MonoBehaviour
 
     public void OnAttackButton()
     {
+        float currentTime = Time.time;
         if (state != BattleState.PLAYERTURN)
             return;
 
-        StartCoroutine(PlayerAttack());
+        if (currentTime - lastClickTime > delayTime)
+        {
+            StartCoroutine(PlayerAttack());
+            lastClickTime = currentTime;
+        }
     }
 
     public void OnRepairButton()
     {
+        float currentTime = Time.time;
+
         if (state != BattleState.PLAYERTURN)
             return;
 
-        StartCoroutine(PlayerRepair());
+        if (currentTime - lastClickTime > delayTime)
+        {
+            StartCoroutine(PlayerRepair());
+            lastClickTime = currentTime;
+        }
     }
 
     public void OnDodgeButton()
     {
+        float currentTime = Time.time;
+
         if (state != BattleState.PLAYERTURN)
             return;
 
-        StartCoroutine(PlayerDodge());
+        if (currentTime - lastClickTime > delayTime)
+        {
+            StartCoroutine(PlayerDodge());
+            lastClickTime = currentTime;
+        }
     }
 
     IEnumerator EnemyTurn()
