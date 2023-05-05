@@ -8,6 +8,7 @@ public class ChangeImage : MonoBehaviour
     [SerializeField] private Sprite[] buttonSprites;
     [SerializeField] private Image targetButton;
 
+
     public void ChangeSprite()
     {
         if (targetButton.sprite == buttonSprites[0])
