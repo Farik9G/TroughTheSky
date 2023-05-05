@@ -1,11 +1,14 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public  class SaveLoadManager :MonoBehaviour
 {
 
-    public  GameObject player;
+    public GameObject player;
     public static GameObject PlayerLoad;
     
     [System.Serializable]
@@ -40,16 +43,16 @@ public  class SaveLoadManager :MonoBehaviour
         public float rubber;
         public float food;
         public SurrogateVector3 position;
-        public bool boss;
+        public List<string> destroyedEnemies;
 
-        public PlayerData(float metal, float wood, float rubber, float food , SurrogateVector3 position,bool boss)
+        public PlayerData(float metal, float wood, float rubber, float food , SurrogateVector3 position, List<string> destroyedEnemies)
         {
             this.metal = metal;
             this.wood = wood;
             this.rubber = rubber;
             this.food = food;
             this.position = position;
-            this.boss = boss;
+            this.destroyedEnemies = destroyedEnemies;
         }
     }
     [System.Serializable]
@@ -84,7 +87,7 @@ public  class SaveLoadManager :MonoBehaviour
         public float rubber;
         public float food;
         public SurrogateVector3 position;
-        
+
 
         public BattleData(float metal, float wood, float rubber, float food, SurrogateVector3 position)
         {
@@ -107,7 +110,7 @@ public  class SaveLoadManager :MonoBehaviour
     public static void SaveButle(BattleData data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/player1_data.dat";
+        string path = Application.persistentDataPath + "/Battle_data.dat";
         FileStream stream = new FileStream(path, FileMode.Create);
 
         formatter.Serialize(stream, data);
@@ -135,7 +138,7 @@ public  class SaveLoadManager :MonoBehaviour
     }
     public static BattleData LoadButtle()
     {
-        string path = Application.persistentDataPath + "/player1_data.dat";
+        string path = Application.persistentDataPath + "/Battle_data.dat";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -158,10 +161,10 @@ public  class SaveLoadManager :MonoBehaviour
         var b = woods1.wood1;
         var c = rubers1.rubber1;
         var d = foods1.food1;
-        var boss = SystemBoss.b;
+        var destroyedEnemies = ObjectManager.destroyedEnemies;
         SaveLoadManager.PlayerData.SurrogateVector3 position = player.transform.position;
         // Сохранить данные игрока
-        PlayerData playerData = new PlayerData(a, b, c, d, position, boss);
+        PlayerData playerData = new PlayerData(a, b, c, d, position, destroyedEnemies);
         SaveLoadManager.Save(playerData);
 
     }
@@ -173,7 +176,8 @@ public  class SaveLoadManager :MonoBehaviour
         rubers1.rubber1 = playerData.rubber;
         foods1.food1 = playerData.food;
         player.transform.position = playerData.position;
-        SystemBoss.b = playerData.boss;
+        ObjectManager.destroyedEnemies = playerData.destroyedEnemies;
+        MainMenu.nn1 = 1;
     }
     public static void lres()
     {
@@ -183,4 +187,5 @@ public  class SaveLoadManager :MonoBehaviour
         rubers1.rubber1 = playerData.rubber;
         foods1.food1 = playerData.food;
     }
+
 }
