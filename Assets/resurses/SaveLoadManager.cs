@@ -4,48 +4,20 @@ using UnityEngine;
 
 public  class SaveLoadManager :MonoBehaviour
 {
-
-    public  GameObject player;
     [System.Serializable]
     public class PlayerData
     {
-        [System.Serializable]
-        public struct SurrogateVector3
-        {
-
-            public float x, y, z;
-
-            public SurrogateVector3(float rX, float rY, float rZ)
-            {
-                x = rX;
-                y = rY;
-                z = rZ;
-            }
-
-            public static implicit operator Vector3(SurrogateVector3 rValue)
-            {
-                return new Vector3(rValue.x, rValue.y, rValue.z);
-            }
-
-            public static implicit operator SurrogateVector3(Vector3 rValue)
-            {
-                return new SurrogateVector3(rValue.x, rValue.y, rValue.z);
-            }
-        }
-
         public float metal;
         public float wood;
         public float rubber;
         public float food;
-        public SurrogateVector3 position;
 
-        public PlayerData(float metal, float wood, float rubber, float food , SurrogateVector3 position)
+        public PlayerData(float metal, float wood, float rubber, float food)
         {
             this.metal = metal;
             this.wood = wood;
             this.rubber = rubber;
             this.food = food;
-            this.position = position;
         }
     }
     public static void Save(PlayerData data)
@@ -83,29 +55,18 @@ public  class SaveLoadManager :MonoBehaviour
         var b = woods1.wood1;
         var c = rubers1.rubber1;
         var d = foods1.food1;
-        SaveLoadManager.PlayerData.SurrogateVector3 position = player.transform.position;
         // Сохранить данные игрока
-        PlayerData playerData = new PlayerData(a, b, c, d, position);
+        PlayerData playerData = new PlayerData(a, b, c, d);
         SaveLoadManager.Save(playerData);
 
     }
-    public  void l1()
+    public static void l1()
     {
         PlayerData playerData = SaveLoadManager.Load();
         metals1.metal1 = playerData.metal;
         woods1.wood1 = playerData.wood;
         rubers1.rubber1 = playerData.rubber;
         foods1.food1 = playerData.food;
-        player.transform.position = playerData.position;
-
-
-    }
-    public static void lres()
-    {
-        PlayerData playerData = SaveLoadManager.Load();
-        metals1.metal1 = playerData.metal;
-        woods1.wood1 = playerData.wood;
-        rubers1.rubber1 = playerData.rubber;
-        foods1.food1 = playerData.food;
+        
     }
 }
