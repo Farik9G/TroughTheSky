@@ -12,9 +12,9 @@ using System.Diagnostics;
 using UnityEngine.UI;
 
 
+
 public class LevelMenu : MonoBehaviour
 {
-    bool n = false;
     public GameObject panel;
     public GameObject button1;
     public GameObject button2;
@@ -25,15 +25,13 @@ public class LevelMenu : MonoBehaviour
     public Image Damage;
     public void Lvl()
     {
-        if (n == false)
+        if(panel.activeSelf==false)
         {
-            panel.SetActive(n);
-            n = true;
+            panel.SetActive(true);
         }
         else
         {
-            panel.SetActive(n);
-            n = false;
+            panel.SetActive(false);
         }
     }
     public void acces1s()
