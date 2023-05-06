@@ -9,16 +9,16 @@ public class TestGrid : MonoBehaviour
     [SerializeField] Tilemap tilemap;
     [SerializeField] BoundsInt area;
     [SerializeField] List<Vector3Int> tileArrayWithoutNull = new List<Vector3Int>();
-    [SerializeField] private List<TileTest> worldTiles = new List<TileTest>();
+    [SerializeField] public List<TileTest> worldTiles = new List<TileTest>();
 
     void Start()
     {
         foreach (var position in tilemap.cellBounds.allPositionsWithin)
         {
             var temp = tilemap.GetTile(position);
-            
+
             if (temp != null)
-                if( !tileArrayWithoutNull.Contains(position))
+                if (!tileArrayWithoutNull.Contains(position))
                     tileArrayWithoutNull.Add(position);
         }
 
@@ -26,13 +26,13 @@ public class TestGrid : MonoBehaviour
         {
             TileTest worldTile = new TileTest();
 
-            worldTile.SetupHex(position, tilemap.GetCellCenterWorld(position), GetNeighbours(position));
+            worldTile.SetupTile(position, tilemap.GetCellCenterWorld(position), GetNeighbours(position));
 
             worldTiles.Add(worldTile);
         }
     }
 
-    private List<Vector3> GetNeighbours(Vector3Int position) 
+    private List<Vector3> GetNeighbours(Vector3Int position)
     {
         List<Vector3Int> neighbours = new List<Vector3Int>();
         int x = 0;
@@ -47,12 +47,12 @@ public class TestGrid : MonoBehaviour
         {
             neighbours.Add(newPosition);
         }
-        newPosition = position + new Vector3Int(x-1, y, 0);
+        newPosition = position + new Vector3Int(x - 1, y, 0);
         if (tileArrayWithoutNull.Contains(newPosition))
         {
             neighbours.Add(newPosition);
         }
-        newPosition = position + new Vector3Int(x+1, y, 0);
+        newPosition = position + new Vector3Int(x + 1, y, 0);
         if (tileArrayWithoutNull.Contains(newPosition))
         {
             neighbours.Add(newPosition);
@@ -68,8 +68,5 @@ public class TestGrid : MonoBehaviour
         return worldPositions;
     }
     // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
+
