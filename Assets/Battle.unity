@@ -856,7 +856,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1903895274}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
         m_MethodName: OnRepairButton
         m_Mode: 1
@@ -2137,7 +2137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5182499, y: 0.20651853}
   m_AnchorMax: {x: 1, y: 0.37866667}
-  m_AnchoredPosition: {x: -9066396, y: 28463412}
+  m_AnchoredPosition: {x: -9066397, y: 28463412}
   m_SizeDelta: {x: -34.099976, y: -29.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1157340326
@@ -3735,7 +3735,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1903895274}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
         m_MethodName: OnAttackButton
         m_Mode: 1
@@ -4023,7 +4023,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1903895274}
         m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
         m_MethodName: OnDodgeButton
         m_Mode: 1
