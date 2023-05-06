@@ -31,6 +31,10 @@ public class Collision : MonoBehaviour
             //BattleSystem.playerPrefab = gameObject;
             //BattleSystem.enemyPrefab = other.gameObject;
 
+
+     
+
+
             SceneManager.LoadScene("Battle");
         }
     }
