@@ -10,6 +10,7 @@ using static System.IO.File;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 using UnityEngine.UI;
+using System.Threading;
 
 
 
@@ -48,10 +49,16 @@ public class LevelMenu : MonoBehaviour
     }
     public void DamagePlus()
     {
+        GameObject.FindGameObjectsWithTag("Enemy");
+        
         Damage.fillAmount += 0.25f;
     }
     public void HpPlus()
     {
         HP.fillAmount += 0.25f;
+    }
+    public void heal()
+    {
+        discontent.DS += 25;
     }
 }
