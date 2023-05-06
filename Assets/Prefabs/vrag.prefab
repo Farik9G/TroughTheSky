@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5890983886071745399}
   - component: {fileID: 5890983886071745396}
-  - component: {fileID: 5890983886071745398}
   - component: {fileID: 8977680502395662249}
   - component: {fileID: 2287186668185272190}
   - component: {fileID: 4349395413387491992}
+  - component: {fileID: 691739774269827246}
   m_Layer: 6
   m_Name: vrag
   m_TagString: Enemy
@@ -88,23 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5890983886071745398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5890983886071745397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8f01445ec24f844dab0056cd9a3f912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitName: Enemy
-  damage: 10
-  maxHP: 100
-  currentHP: 100
-  dodgeValue: 0
 --- !u!50 &8977680502395662249
 Rigidbody2D:
   serializedVersion: 4
@@ -167,3 +150,20 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &691739774269827246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5890983886071745397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f7a5b5a2b66b246a065cd3f1639897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Enemy
+  damage: 100
+  maxHP: 100
+  currentHP: 100
+  dodgeValue: 0
