@@ -8,6 +8,16 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+<<<<<<< Updated upstream
+=======
+        startgame = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+    public void LoadGame()
+    {
+        n = 1;
+        n1 = 1;
+>>>>>>> Stashed changes
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

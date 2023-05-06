@@ -3,15 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -41,3 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< Updated upstream
+=======
+  - name: Terrain
+    uniqueID: 1683108955
+    locked: 0
+  - name: Cols
+    uniqueID: 1422119493
+    locked: 0
+  - name: Player
+    uniqueID: 1075546611
+    locked: 0
+  - name: Enemy
+    uniqueID: 3047912249
+    locked: 0
+>>>>>>> Stashed changes
