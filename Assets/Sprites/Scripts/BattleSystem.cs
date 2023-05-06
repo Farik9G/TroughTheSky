@@ -14,8 +14,8 @@ public class BattleSystem : MonoBehaviour
     public float delayTime = 1f; // время задержки между нажатиями кнопок
     private float lastClickTime = 0f; // время последнего нажатия кнопки
 
-    public static GameObject playerPrefab;
-    public static GameObject enemyPrefab;
+    private GameObject playerPrefab;
+    private GameObject enemyPrefab;
 
     public Transform playerBattleStation;
     public Transform enemyBattleStation;
@@ -36,20 +36,28 @@ public class BattleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(ObjectManager.instance.enemy);
+        Debug.Log(ObjectManager.instance.player);
+        enemyPrefab = ObjectManager.instance.enemy;
+        playerPrefab = ObjectManager.instance.player;
+
+        //Отключает скрипт передвижения на время боевой сцены
+        playerPrefab.GetComponent<PC>().enabled = false;
         state = BattleState.START;
         enemyPrefab = ObjectManager.instance.enemy;
         playerPrefab = ObjectManager.instance.player;
         StartCoroutine(SetupBattle());
+
     }
 
     IEnumerator SetupBattle()
     {
         Vector3 playerPos = new Vector3(-0.85f, -0.11f, 0f);
-        GameObject playerGO = Instantiate(playerPrefab, playerPos, Quaternion.identity);
+        GameObject playerGO = Instantiate(ObjectManager.instance.player, playerPos, Quaternion.identity);
         playerUnit = playerGO.GetComponent<Unit>();
 
         Vector3 enemyPos = new Vector3(0.91f, 0.56f, 0f);
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyPos, Quaternion.identity);
+        GameObject enemyGO = Instantiate(ObjectManager.instance.enemy, enemyPos, Quaternion.identity);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = "Ваш враг " + enemyUnit.unitName;
@@ -221,3 +229,21 @@ public class BattleSystem : MonoBehaviour
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
