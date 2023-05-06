@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5890983886071745398}
   - component: {fileID: 8977680502395662249}
   - component: {fileID: 2287186668185272190}
+  - component: {fileID: 4349395413387491992}
   m_Layer: 6
   m_Name: vrag
   m_TagString: Enemy
@@ -132,6 +133,22 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5890983886071745397}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.55740166, y: -0.6812687}
+  serializedVersion: 2
+  m_Radius: 3.9236698
+--- !u!68 &4349395413387491992
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5890983886071745397}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -139,5 +156,14 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.685
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.1664577, y: -1.4972849}
+  - {x: 0.33330086, y: -3.4781835}
+  - {x: 3.743545, y: -1.4670186}
+  - {x: 0.39336708, y: 0.5686517}
+  - {x: -3.1518168, y: -1.3535142}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

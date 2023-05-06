@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5655496329427509480}
   - component: {fileID: 5746271894363556634}
   - component: {fileID: 7124500994641246071}
+  - component: {fileID: 263195600947361445}
   m_Layer: 3
   m_Name: Player 1
   m_TagString: Player
@@ -119,6 +120,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundTilemap: {fileID: 0}
   collisionTilemap: {fileID: 0}
+  currentTile:
+    _positionInGrid: {x: 0, y: 0, z: 0}
+    _position: {x: 0, y: 0, z: 0}
+    _neighbours: []
 --- !u!114 &3071776814333445986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +200,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.30154693, y: -3.696742}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -206,5 +211,30 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.74, y: 7.74}
+  m_Size: {x: 6.5831594, y: 3.9650888}
   m_EdgeRadius: 0
+--- !u!68 &263195600947361445
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3071776814333445977}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.2839117, y: -1.7662072}
+  - {x: 3.7815077, y: -3.7022812}
+  - {x: 0.21535474, y: -5.7485633}
+  - {x: -3.1862264, y: -3.8303082}
+  - {x: 0.2761087, y: -1.6800482}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
