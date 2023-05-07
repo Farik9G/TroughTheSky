@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/TestGrid.cs.meta
+guid: b51f79e816d5f91408618ecfe6669fb0
+========
+guid: 1f1fbd8f3a0d4354190ec69de633eb55
+>>>>>>>> main:Assets/PirateBattle.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

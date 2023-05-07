@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/TestGrid.cs.meta
 guid: 6839bde0e13559b4fb7f97948a620ae0
+========
+guid: 1f1fbd8f3a0d4354190ec69de633eb55
+>>>>>>>> main:Assets/PirateBattle.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

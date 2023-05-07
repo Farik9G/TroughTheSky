@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/resurses/SaveLoadManager.cs.meta
+guid: 2ab07063e8c1e314e94484033077982a
+=======
+guid: 26ab312f1af1bf846ac26e2e5ecfff0a
+>>>>>>> main:Assets/Sprites/Scripts/SaveLoadManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
