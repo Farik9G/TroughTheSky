@@ -30,10 +30,12 @@ public class Collision : MonoBehaviour
             SaveLoadManager.BattleData.SurrogateVector3 position = this.transform.position;
             SaveLoadManager.BattleData Data = new SaveLoadManager.BattleData(a, b, c, d, position);
             SaveLoadManager.SaveButle(Data);
+            // Debug.Log("Получилось");
             //BattleSystem.playerPrefab = gameObject;
             //BattleSystem.enemyPrefab = other.gameObject;
             // DialogueEditor.ConversationManager.OnConversationStarted(PirateBattle);
             ConversationManager.Instance.StartConversation(PirateConversation);
+            Debug.Log("Получилось");
 
 
 
