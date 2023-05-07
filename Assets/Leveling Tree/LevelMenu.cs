@@ -49,12 +49,20 @@ public class LevelMenu : MonoBehaviour
     }
     public void DamagePlus()
     {
-        GameObject.FindGameObjectsWithTag("Enemy");
-        
+        if (Damage.fillAmount >= 1f)
+        {
+
+        }
+        else
         Damage.fillAmount += 0.25f;
     }
     public void HpPlus()
     {
+        if (HP.fillAmount >= 1)
+        {
+
+        }
+        else
         HP.fillAmount += 0.25f;
     }
     public void heal()
