@@ -4,9 +4,11 @@ using System.Runtime.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DialogueEditor;
 
 public class Collision : MonoBehaviour
 {
+    public NPCConversation PirateConversation;
     //public Observer obs;
     //public  ObjectManager objectManager = ObjectManager.instance;
     public GameObject player;
@@ -30,12 +32,20 @@ public class Collision : MonoBehaviour
             SaveLoadManager.SaveButle(Data);
             //BattleSystem.playerPrefab = gameObject;
             //BattleSystem.enemyPrefab = other.gameObject;
+            // DialogueEditor.ConversationManager.OnConversationStarted(PirateBattle);
+            ConversationManager.Instance.StartConversation(PirateConversation);
 
 
-     
 
 
-            SceneManager.LoadScene("Battle");
+            // SceneManager.LoadScene("Battle");
         }
+
+
+    }
+
+    public void Scene()
+    {
+        SceneManager.LoadScene("Battle");
     }
 }
