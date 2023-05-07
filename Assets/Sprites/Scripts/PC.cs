@@ -32,7 +32,7 @@ public class PC : MonoBehaviour
     void Start()
     {
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
-
+        Debug.Log("Transform position in PC" + transform.position);
         // Найти ближайший тайл к начальной позиции игрока
         float minDistance = Mathf.Infinity;
         BoundsInt bounds = groundTilemap.cellBounds;
