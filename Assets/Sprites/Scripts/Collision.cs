@@ -31,9 +31,16 @@ public class Collision : MonoBehaviour
             var b = woods1.wood1;
             var c = rubers1.rubber1;
             var d = foods1.food1;
+            Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+            var currenthp = unit.currentHP;
+            var damage = unit.damage;
+            var Maxhp = unit.maxHP;
+            var hplvl = unit.HpLvl;
+            var damagelvl = unit.DamageLvl;
+            var destroyedEnemies = ObjectManager.destroyedEnemies;
             Debug.Log("transform position in collision" + transform.position);
             SaveLoadManager.BattleData.SurrogateVector3 position = this.transform.position;
-            SaveLoadManager.BattleData Data = new SaveLoadManager.BattleData(a, b, c, d, position);
+            SaveLoadManager.BattleData Data = new SaveLoadManager.BattleData(a, b, c, d, position, destroyedEnemies, damage, damagelvl, currenthp, Maxhp, hplvl);
             SaveLoadManager.SaveButle(Data);
             ConversationManager.Instance.StartConversation(PirateConversation);
         }

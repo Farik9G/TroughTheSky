@@ -204,6 +204,7 @@ public class BattleSystem : MonoBehaviour
             Destroy(enemyPrefab);
             ObjectManager.destroyedEnemies.Add(ObjectManager.instance.enemy.name);
             MainMenu.n1 = 1;
+            ObjectManager.currentHp = playerUnit.currentHP;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
         else if (state == BattleState.LOST)

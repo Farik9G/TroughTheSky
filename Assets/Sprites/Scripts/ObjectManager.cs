@@ -8,6 +8,7 @@ public class ObjectManager : MonoBehaviour
 
     public GameObject enemy;
     public GameObject player;
+    public static int currentHp;
 
     public static List<string> destroyedEnemies = new List<string>();
 
