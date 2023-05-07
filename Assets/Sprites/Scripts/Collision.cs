@@ -12,8 +12,11 @@ public class Collision : MonoBehaviour
     //public Observer obs;
     //public  ObjectManager objectManager = ObjectManager.instance;
     public NPCConversation PirateConversation;
+    public NPCConversation AristocratConversation;
+    public NPCConversation ScientistConversation;
+    public NPCConversation MilitaryConversation;
     public GameObject player;
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
 
         Debug.Log("Collision detected!");
@@ -40,17 +43,23 @@ public class Collision : MonoBehaviour
             SaveLoadManager.BattleData Data = new SaveLoadManager.BattleData(a, b, c, d, position, destroyedEnemies, damage, damagelvl, currenthp, Maxhp, hplvl);
             SaveLoadManager.SaveButle(Data);
             ConversationManager.Instance.StartConversation(PirateConversation);
-            //BattleSystem.playerPrefab = gameObject;
-            //BattleSystem.enemyPrefab = other.gameObject;
-
-
-
-
-
-            //SceneManager.LoadScene("Battle");
         }
 
-        
+        if (other.gameObject.tag == "Aristocrat")
+        {
+            ConversationManager.Instance.StartConversation(AristocratConversation);
+        }
+
+        if (other.gameObject.tag == "Scientist")
+        {
+            ConversationManager.Instance.StartConversation(ScientistConversation);
+        }
+
+        if (other.gameObject.tag == "Military")
+        {
+            ConversationManager.Instance.StartConversation(MilitaryConversation);
+        }
+
     }
     public void Scene()
     {

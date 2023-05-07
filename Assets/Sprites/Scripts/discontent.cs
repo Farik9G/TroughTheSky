@@ -28,4 +28,13 @@ public class discontent : MonoBehaviour
             ds.fillAmount = ds.fillAmount - 0.0005f;
         }
     }
+
+    public void Increasebar()
+    {
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        if (unit.HpLvl < 4)
+        {
+            ds.fillAmount *= 1.25f;
+        }
+    }
 }

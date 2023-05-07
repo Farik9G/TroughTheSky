@@ -59,6 +59,7 @@ public class LevelMenu : MonoBehaviour
         Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
         if (unit.HpLvl < 4)
         {
+
             unit.maxHP += 100;
             unit.HpLvl += 1;
             HP.fillAmount += 0.25f;
@@ -76,17 +77,29 @@ public class LevelMenu : MonoBehaviour
             int a = unit.HpLvl;
             int b = unit.DamageLvl;
 
-            HP.fillAmount = a*0.25f;
-            Damage.fillAmount =b*  0.25f;
+            HP.fillAmount = a * 0.25f;
+            Damage.fillAmount = b * 0.25f;
             MainMenu.startgame = 0;
         }
         if (MainMenu.nn1 == 10)
         {
             int a = unit.HpLvl;
             int b = unit.DamageLvl;
-            HP.fillAmount =  a*0.25f;
-            Damage.fillAmount =b*   0.25f;
+
+            HP.fillAmount = a * 0.25f;
+            Damage.fillAmount = b * 0.25f;
+            Debug.Log("Yeds");
             MainMenu.nn1= 0;
+        }
+        if (MainMenu.n1 == 10)
+        {
+            int a = unit.HpLvl;
+            int b = unit.DamageLvl;
+
+            HP.fillAmount = a * 0.25f;
+            Damage.fillAmount = b * 0.25f;
+            Debug.Log("Yeds");
+            MainMenu.n1 = 0;
         }
     }
 }
