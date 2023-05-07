@@ -48,6 +48,7 @@ public class loadpos : MonoBehaviour
             }
             Debug.Log("Transform position in loadpos " + $"{posdata.position.x}, {posdata.position.y}, {posdata.position.z}");
             player.transform.position = posdata.position;
+
             MainMenu.nn1 = 0;
         }
 
