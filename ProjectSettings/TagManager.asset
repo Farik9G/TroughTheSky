@@ -45,20 +45,14 @@ TagManager:
   - name: Terrain
     uniqueID: 1683108955
     locked: 0
-  - name: Decor
-    uniqueID: 666264691
-    locked: 0
   - name: Cols
     uniqueID: 1422119493
     locked: 0
-  - name: Decor2
-    uniqueID: 4278171017
+  - name: Player
+    uniqueID: 1075546611
     locked: 0
   - name: Enemy
     uniqueID: 3047912249
-    locked: 0
-  - name: Player
-    uniqueID: 1075546611
     locked: 0
   - name: Trees
     uniqueID: 3378218687

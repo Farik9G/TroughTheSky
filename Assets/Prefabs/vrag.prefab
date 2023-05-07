@@ -141,5 +141,3 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 100
   dodgeValue: 0
-  DamageLvl: 0
-  HpLvl: 0
