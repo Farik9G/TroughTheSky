@@ -409,7 +409,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: a25d8a5e6987b824a9442288cf5f1347, type: 3}
+    m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -510,6 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonSprites:
+  - {fileID: 21300000, guid: c3b360e9757a3284f9ac0893713e0f2d, type: 3}
   - {fileID: 21300000, guid: a25d8a5e6987b824a9442288cf5f1347, type: 3}
   targetButton: {fileID: 213222234}
 --- !u!1 &233820652
