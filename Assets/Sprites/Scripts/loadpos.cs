@@ -5,7 +5,7 @@ using UnityEngine;
 public class loadpos : MonoBehaviour
 {
    public GameObject player;
-    void Awake()
+    void Update()
     {
         if (MainMenu.n1 == 1)
         {
@@ -46,7 +46,6 @@ public class loadpos : MonoBehaviour
                 }
             }
             player.transform.position = posdata.position;
-
             MainMenu.nn1 = 0;
         }
 

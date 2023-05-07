@@ -21,11 +21,13 @@ public class discontent : MonoBehaviour
     {
         if (DS / 100 > ds.fillAmount)
         {
-            ds.fillAmount = ds.fillAmount + 0.0005f;
+            ds.fillAmount = ds.fillAmount + 0.01f;
+            Thread.Sleep(50);
         }
         if (DS / 100 < ds.fillAmount)
         {
-            ds.fillAmount = ds.fillAmount - 0.0005f;
+            ds.fillAmount = ds.fillAmount - 0.01f;
+            Thread.Sleep(50);
         }
     }
 }

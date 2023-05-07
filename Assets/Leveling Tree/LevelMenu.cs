@@ -10,12 +10,11 @@ using static System.IO.File;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 using UnityEngine.UI;
-using System.Threading;
-
 
 
 public class LevelMenu : MonoBehaviour
 {
+    bool n = false;
     public GameObject panel;
     public GameObject button1;
     public GameObject button2;
@@ -26,13 +25,15 @@ public class LevelMenu : MonoBehaviour
     public Image Damage;
     public void Lvl()
     {
-        if(panel.activeSelf==false)
+        if (n == false)
         {
-            panel.SetActive(true);
+            panel.SetActive(n);
+            n = true;
         }
         else
         {
-            panel.SetActive(false);
+            panel.SetActive(n);
+            n = false;
         }
     }
     public void acces1s()
@@ -49,24 +50,10 @@ public class LevelMenu : MonoBehaviour
     }
     public void DamagePlus()
     {
-        if (Damage.fillAmount >= 1f)
-        {
-
-        }
-        else
         Damage.fillAmount += 0.25f;
     }
     public void HpPlus()
     {
-        if (HP.fillAmount >= 1)
-        {
-
-        }
-        else
         HP.fillAmount += 0.25f;
-    }
-    public void heal()
-    {
-        discontent.DS += 25;
     }
 }

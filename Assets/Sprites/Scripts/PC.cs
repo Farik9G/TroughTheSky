@@ -6,13 +6,13 @@ using TG;
 
 public class PC : MonoBehaviour
 {
-    
+
     [SerializeField]
     private Tilemap collisionTilemap;
     [SerializeField]
     private Tilemap groundTilemap;
     private PlayerMovement controls;
-    [SerializeField] public  Vector3Int currentPos;
+    [SerializeField] private Vector3Int currentPos;
 
     private void Awake()
     {
@@ -32,6 +32,7 @@ public class PC : MonoBehaviour
     void Start()
     {
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
+
         // Найти ближайший тайл к начальной позиции игрока
         float minDistance = Mathf.Infinity;
         BoundsInt bounds = groundTilemap.cellBounds;
@@ -60,7 +61,7 @@ public class PC : MonoBehaviour
         Vector3Int pT = PotentialTile(direction);
         if (groundTilemap.GetTile(pT) != null && !collisionTilemap.HasTile(pT + new Vector3Int(-2, -1, 0)))
         {
-           transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 3.5f, 0));
+            transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0));
             currentPos = pT;
         }
     }
