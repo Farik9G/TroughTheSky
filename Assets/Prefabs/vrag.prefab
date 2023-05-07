@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1075546611
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b29505aad5b68944d934795d7b78ed3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,3 +141,5 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 100
   dodgeValue: 0
+  DamageLvl: 0
+  HpLvl: 0

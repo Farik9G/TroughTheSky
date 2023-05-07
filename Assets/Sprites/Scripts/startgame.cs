@@ -32,7 +32,8 @@ public class startgame : MonoBehaviour
             unit.DamageLvl = 0;
             unit.maxHP = 100;
             unit.HpLvl = 0;
-            MainMenu.startgame = 0;
+            MainMenu.startgame = 10;
+
 
         }
 
