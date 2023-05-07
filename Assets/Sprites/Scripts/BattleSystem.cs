@@ -44,8 +44,6 @@ public class BattleSystem : MonoBehaviour
         //Отключает скрипт передвижения на время боевой сцены
         playerPrefab.GetComponent<PC>().enabled = false;
         state = BattleState.START;
-        enemyPrefab = ObjectManager.instance.enemy;
-        playerPrefab = ObjectManager.instance.player;
         StartCoroutine(SetupBattle());
 
     }
@@ -54,10 +52,12 @@ public class BattleSystem : MonoBehaviour
     {
         Vector3 playerPos = new Vector3(-0.85f, -0.11f, 0f);
         GameObject playerGO = Instantiate(ObjectManager.instance.player, playerPos, Quaternion.identity);
+        playerGO.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
         playerUnit = playerGO.GetComponent<Unit>();
 
-        Vector3 enemyPos = new Vector3(0.91f, 0.56f, 0f);
+        Vector3 enemyPos = new Vector3(0.91f, 0.3f, 0f);
         GameObject enemyGO = Instantiate(ObjectManager.instance.enemy, enemyPos, Quaternion.identity);
+        enemyGO.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = "Ваш враг " + enemyUnit.unitName;
