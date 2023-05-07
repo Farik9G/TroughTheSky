@@ -102,15 +102,27 @@ public  class SaveLoadManager :MonoBehaviour
         public float rubber;
         public float food;
         public SurrogateVector3 position;
+        public List<string> destroyedEnemies;
+        public int damage;
+        public int damagelvl;
+        public int currenthp;
+        public int Maxhp;
+        public int Hplvl;
 
 
-        public BattleData(float metal, float wood, float rubber, float food, SurrogateVector3 position)
+        public BattleData(float metal, float wood, float rubber, float food, SurrogateVector3 position, List<string> destroyedEnemies, int damage, int damagelvl, int currenthp, int Maxhp, int Hplvl)
         {
             this.metal = metal;
             this.wood = wood;
             this.rubber = rubber;
             this.food = food;
             this.position = position;
+            this.destroyedEnemies = destroyedEnemies;
+            this.damage = damage;
+            this.damagelvl = damagelvl;
+            this.currenthp = currenthp;
+            this.Maxhp = Maxhp;
+            this.Hplvl = Hplvl;
         }
     }
     public static void Save(PlayerData data)
@@ -198,6 +210,12 @@ public  class SaveLoadManager :MonoBehaviour
         foods1.food1 = playerData.food;
         player.transform.position = playerData.position;
         ObjectManager.destroyedEnemies = playerData.destroyedEnemies;
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        unit.currentHP = playerData.currenthp;
+        unit.damage = playerData.damage;
+        unit.maxHP = playerData.Maxhp;
+        unit.DamageLvl = playerData.damagelvl;
+        unit.HpLvl = playerData.Hplvl;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         {
@@ -208,7 +226,7 @@ public  class SaveLoadManager :MonoBehaviour
             }
         }
 
-        MainMenu.nn1 = 1;
+        MainMenu.nn1 = 10;
     }
     public static void lres()
     {
