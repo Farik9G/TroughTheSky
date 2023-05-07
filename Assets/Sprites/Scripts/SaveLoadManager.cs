@@ -5,6 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+
 public  class SaveLoadManager :MonoBehaviour
 {
 
@@ -44,8 +49,13 @@ public  class SaveLoadManager :MonoBehaviour
         public float food;
         public SurrogateVector3 position;
         public List<string> destroyedEnemies;
+        public int damage;
+        public int damagelvl;
+        public int currenthp;
+        public int Maxhp;
+        public int Hplvl;
 
-        public PlayerData(float metal, float wood, float rubber, float food , SurrogateVector3 position, List<string> destroyedEnemies)
+        public PlayerData(float metal, float wood, float rubber, float food , SurrogateVector3 position, List<string> destroyedEnemies, int damage, int damagelvl, int currenthp, int Maxhp, int Hplvl)
         {
             this.metal = metal;
             this.wood = wood;
@@ -53,6 +63,11 @@ public  class SaveLoadManager :MonoBehaviour
             this.food = food;
             this.position = position;
             this.destroyedEnemies = destroyedEnemies;
+            this.damage = damage;
+            this.damagelvl = damagelvl;
+            this.currenthp = currenthp;
+            this.Maxhp = Maxhp;
+            this.Hplvl = Hplvl;
         }
     }
     [System.Serializable]
@@ -87,15 +102,27 @@ public  class SaveLoadManager :MonoBehaviour
         public float rubber;
         public float food;
         public SurrogateVector3 position;
+        public List<string> destroyedEnemies;
+        public int damage;
+        public int damagelvl;
+        public int currenthp;
+        public int Maxhp;
+        public int Hplvl;
 
 
-        public BattleData(float metal, float wood, float rubber, float food, SurrogateVector3 position)
+        public BattleData(float metal, float wood, float rubber, float food, SurrogateVector3 position, List<string> destroyedEnemies, int damage, int damagelvl, int currenthp, int Maxhp, int Hplvl)
         {
             this.metal = metal;
             this.wood = wood;
             this.rubber = rubber;
             this.food = food;
             this.position = position;
+            this.destroyedEnemies = destroyedEnemies;
+            this.damage = damage;
+            this.damagelvl = damagelvl;
+            this.currenthp = currenthp;
+            this.Maxhp = Maxhp;
+            this.Hplvl = Hplvl;
         }
     }
     public static void Save(PlayerData data)
@@ -161,10 +188,16 @@ public  class SaveLoadManager :MonoBehaviour
         var b = woods1.wood1;
         var c = rubers1.rubber1;
         var d = foods1.food1;
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        var currenthp = unit.currentHP;
+        var damage = unit.damage;
+        var Maxhp = unit.maxHP;
+        var hplvl = unit.HpLvl;
+        var damagelvl = unit.DamageLvl;
         var destroyedEnemies = ObjectManager.destroyedEnemies;
         SaveLoadManager.PlayerData.SurrogateVector3 position = player.transform.position;
         // Сохранить данные игрока
-        PlayerData playerData = new PlayerData(a, b, c, d, position, destroyedEnemies);
+        PlayerData playerData = new PlayerData(a, b, c, d, position, destroyedEnemies, damage,damagelvl,currenthp,Maxhp,hplvl);
         SaveLoadManager.Save(playerData);
 
     }
@@ -177,7 +210,23 @@ public  class SaveLoadManager :MonoBehaviour
         foods1.food1 = playerData.food;
         player.transform.position = playerData.position;
         ObjectManager.destroyedEnemies = playerData.destroyedEnemies;
-        MainMenu.nn1 = 1;
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        unit.currentHP = playerData.currenthp;
+        unit.damage = playerData.damage;
+        unit.maxHP = playerData.Maxhp;
+        unit.DamageLvl = playerData.damagelvl;
+        unit.HpLvl = playerData.Hplvl;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            if (ObjectManager.destroyedEnemies.Contains(enemy.name))
+            {
+                Debug.Log("good");
+                enemy.SetActive(false);
+            }
+        }
+
+        MainMenu.nn1 = 10;
     }
     public static void lres()
     {
