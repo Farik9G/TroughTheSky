@@ -25,6 +25,7 @@ public class loadpos : MonoBehaviour
                     enemy.SetActive(false);
                 }
             }
+            Debug.Log("Transform position in loadpos " + $"{posdata.position.x}, {posdata.position.y}, {posdata.position.z}");
             player.transform.position = posdata.position;
             MainMenu.n1 = 0;
         }
@@ -45,6 +46,7 @@ public class loadpos : MonoBehaviour
                     enemy.SetActive(false);
                 }
             }
+            Debug.Log("Transform position in loadpos " + $"{posdata.position.x}, {posdata.position.y}, {posdata.position.z}");
             player.transform.position = posdata.position;
 
             MainMenu.nn1 = 0;

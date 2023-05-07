@@ -13,6 +13,9 @@ public class Unit : MonoBehaviour
     public int currentHP;
 
     public int dodgeValue;
+
+    public int DamageLvl = 0;
+    public int HpLvl = 0;
     [SerializeField]
     public bool TakeDamage(int dmg)
     {
