@@ -27,7 +27,15 @@ public class loadpos : MonoBehaviour
             }
             Debug.Log("Transform position in loadpos " + $"{posdata.position.x}, {posdata.position.y}, {posdata.position.z}");
             player.transform.position = posdata.position;
-            MainMenu.n1 = 0;
+            player.transform.position = posdata.position;
+            Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+            unit.damage = posdata.damage;
+            unit.currentHP = ObjectManager.currentHp;
+            unit.DamageLvl = posdata.damagelvl;
+            unit.maxHP = posdata.Maxhp;
+            unit.HpLvl = posdata.Hplvl;
+
+            MainMenu.n1 = 10;
         }
         if (MainMenu.nn1 == 1)
         {
@@ -48,8 +56,14 @@ public class loadpos : MonoBehaviour
             }
             Debug.Log("Transform position in loadpos " + $"{posdata.position.x}, {posdata.position.y}, {posdata.position.z}");
             player.transform.position = posdata.position;
+            Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+            unit.damage = posdata.damage;
+            unit.currentHP = posdata.currenthp;
+            unit.DamageLvl = posdata.damagelvl;
+            unit.maxHP = posdata.Maxhp;
+            unit.HpLvl = posdata.Hplvl;
 
-            MainMenu.nn1 = 0;
+            MainMenu.nn1 = 10;
         }
 
     }

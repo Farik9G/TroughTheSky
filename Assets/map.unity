@@ -2042,10 +2042,8 @@ MonoBehaviour:
   button1: {fileID: 0}
   button2: {fileID: 0}
   button3: {fileID: 0}
-  HPButton: {fileID: 0}
-  HP: {fileID: 0}
-  DamaheButton: {fileID: 0}
-  Damage: {fileID: 0}
+  HP: {fileID: 368861606}
+  Damage: {fileID: 1604971572}
 --- !u!114 &438696176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15823,10 +15821,8 @@ MonoBehaviour:
   button1: {fileID: 790502689}
   button2: {fileID: 0}
   button3: {fileID: 0}
-  HPButton: {fileID: 0}
-  HP: {fileID: 0}
-  DamaheButton: {fileID: 0}
-  Damage: {fileID: 0}
+  HP: {fileID: 368861606}
+  Damage: {fileID: 1604971572}
 --- !u!1 &791260108
 GameObject:
   m_ObjectHideFlags: 0
@@ -16646,7 +16642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -498.9391, y: 116.06496}
+  m_AnchoredPosition: {x: -498, y: 126}
   m_SizeDelta: {x: -847.8782, y: -612.1299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &902281990
@@ -18541,10 +18537,8 @@ MonoBehaviour:
   button1: {fileID: 0}
   button2: {fileID: 1210873492}
   button3: {fileID: 0}
-  HPButton: {fileID: 0}
-  HP: {fileID: 0}
-  DamaheButton: {fileID: 0}
-  Damage: {fileID: 0}
+  HP: {fileID: 368861606}
+  Damage: {fileID: 1604971572}
 --- !u!1 &1249048892
 GameObject:
   m_ObjectHideFlags: 0
@@ -19491,10 +19485,8 @@ MonoBehaviour:
   button1: {fileID: 0}
   button2: {fileID: 0}
   button3: {fileID: 0}
-  HPButton: {fileID: 0}
-  HP: {fileID: 0}
-  DamaheButton: {fileID: 0}
-  Damage: {fileID: 0}
+  HP: {fileID: 368861606}
+  Damage: {fileID: 1604971572}
 --- !u!1 &1400527021
 GameObject:
   m_ObjectHideFlags: 0
@@ -20034,13 +20026,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  HPButton: {fileID: 0}
+  button1: {fileID: 790502689}
+  button2: {fileID: 1210873492}
+  button3: {fileID: 1784425330}
   HP: {fileID: 368861606}
-  DamaheButton: {fileID: 0}
-  Damage: {fileID: 0}
+  Damage: {fileID: 1604971572}
 --- !u!1 &1548289977
 GameObject:
   m_ObjectHideFlags: 0
@@ -21452,10 +21442,8 @@ MonoBehaviour:
   button1: {fileID: 0}
   button2: {fileID: 0}
   button3: {fileID: 1784425330}
-  HPButton: {fileID: 0}
-  HP: {fileID: 0}
-  DamaheButton: {fileID: 0}
-  Damage: {fileID: 0}
+  HP: {fileID: 368861606}
+  Damage: {fileID: 1604971572}
 --- !u!1 &1827473332
 GameObject:
   m_ObjectHideFlags: 0
@@ -21686,12 +21674,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  HPButton: {fileID: 0}
-  HP: {fileID: 0}
-  DamaheButton: {fileID: 0}
+  button1: {fileID: 790502689}
+  button2: {fileID: 1210873492}
+  button3: {fileID: 1784425330}
+  HP: {fileID: 368861606}
   Damage: {fileID: 1604971572}
 --- !u!1 &1831995423
 GameObject:
