@@ -62,7 +62,7 @@ public class LevelMenu : MonoBehaviour
     {
         Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
         if (unit.HpLvl < 4)
-        {
+        {   
             unit.maxHP += 100;
             unit.HpLvl += 1;
             HP.fillAmount += 0.25f;

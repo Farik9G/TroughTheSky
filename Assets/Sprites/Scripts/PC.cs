@@ -55,6 +55,28 @@ public class PC : MonoBehaviour
 
     }
 
+    public void StartPos()
+    {
+        float minDistance = Mathf.Infinity;
+        BoundsInt bounds = groundTilemap.cellBounds;
+        foreach (Vector3Int pos in bounds.allPositionsWithin)
+        {
+            TileBase tile = groundTilemap.GetTile(pos);
+            if (tile != null)
+            {
+                float distance = Vector3.Distance(transform.position, groundTilemap.GetCellCenterWorld(pos));
+                if (distance < minDistance)
+                {
+                    currentPos = pos;
+                    minDistance = distance;
+                }
+            }
+        }
+
+        Debug.Log("Current position" + currentPos);
+        transform.position = groundTilemap.GetCellCenterWorld(currentPos) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0);
+    }
+
 
     private void Move(Vector2 direction)
     {

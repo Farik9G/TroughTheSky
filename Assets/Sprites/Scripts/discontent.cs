@@ -28,4 +28,14 @@ public class discontent : MonoBehaviour
             ds.fillAmount = ds.fillAmount - 0.0005f;
         }
     }
+
+    public void Increasebar()
+    {
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        if (unit.HpLvl < 4)
+        {
+            ds.rectTransform.anchoredPosition = new Vector2(ds.rectTransform.anchoredPosition.x + 50, ds.rectTransform.anchoredPosition.y);
+            ds.rectTransform.sizeDelta = new Vector2(ds.rectTransform.sizeDelta.x + 80, ds.rectTransform.sizeDelta.y);
+        }
+    }
 }
