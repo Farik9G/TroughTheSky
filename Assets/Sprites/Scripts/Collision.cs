@@ -16,6 +16,9 @@ public class Collision : MonoBehaviour
     public NPCConversation ScientistConversation;
     public NPCConversation MilitaryConversation;
     public GameObject player;
+    public static int arist = 1;
+    public static int scienc = 1;
+    public static int military = 1;
     void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -46,18 +49,42 @@ public class Collision : MonoBehaviour
         }
 
         if (other.gameObject.tag == "Aristocrat")
+            
         {
-            ConversationManager.Instance.StartConversation(AristocratConversation);
+            if (arist==1)
+            {
+                ConversationManager.Instance.StartConversation(AristocratConversation);
+            }
+            else
+            {
+
+            }
+            
         }
 
         if (other.gameObject.tag == "Scientist")
         {
-            ConversationManager.Instance.StartConversation(ScientistConversation);
+            if (scienc == 1)
+            {
+                ConversationManager.Instance.StartConversation(ScientistConversation);
+            }
+            else
+            {
+
+            }
         }
 
         if (other.gameObject.tag == "Military")
         {
-            ConversationManager.Instance.StartConversation(MilitaryConversation);
+            if (military == 1)
+            {
+                ConversationManager.Instance.StartConversation(MilitaryConversation);
+            }
+            else
+            {
+
+            }
+            
         }
 
     }
