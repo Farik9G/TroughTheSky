@@ -1,3 +1,4 @@
+using DialogueEditor;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -10,8 +11,9 @@ public class Collision : MonoBehaviour
 {
     //public Observer obs;
     //public  ObjectManager objectManager = ObjectManager.instance;
+    public NPCConversation PirateConversation;
     public GameObject player;
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
 
         Debug.Log("Collision detected!");
@@ -30,14 +32,21 @@ public class Collision : MonoBehaviour
             SaveLoadManager.BattleData.SurrogateVector3 position = this.transform.position;
             SaveLoadManager.BattleData Data = new SaveLoadManager.BattleData(a, b, c, d, position);
             SaveLoadManager.SaveButle(Data);
+            ConversationManager.Instance.StartConversation(PirateConversation);
             //BattleSystem.playerPrefab = gameObject;
             //BattleSystem.enemyPrefab = other.gameObject;
 
 
-     
 
 
-            SceneManager.LoadScene("Battle");
+
+            //SceneManager.LoadScene("Battle");
         }
+
+        
+    }
+    public void Scene()
+    {
+        SceneManager.LoadScene("Battle");
     }
 }
