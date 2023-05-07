@@ -7,7 +7,7 @@ using System.Threading;
 public class discontent : MonoBehaviour
 {
     public Image ds;
-    private float startdiscontent = 0f;
+    private float startdiscontent = 100f;
     public static float DS = 0f;
     // Start is called before the first frame update
     void Start()
