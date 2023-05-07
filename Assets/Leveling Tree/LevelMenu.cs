@@ -11,8 +11,7 @@ using System.Text.RegularExpressions;
 using System.Diagnostics;
 using UnityEngine.UI;
 using System.Threading;
-
-
+using System.Linq;
 
 public class LevelMenu : MonoBehaviour
 {
@@ -24,6 +23,8 @@ public class LevelMenu : MonoBehaviour
     public Image HP;
     public GameObject DamaheButton;
     public Image Damage;
+    //GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+    //public Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
     public void Lvl()
     {
         if(panel.activeSelf==false)
@@ -49,21 +50,23 @@ public class LevelMenu : MonoBehaviour
     }
     public void DamagePlus()
     {
-        if (Damage.fillAmount >= 1f)
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        if (unit.DamageLvl < 4)
         {
-
+            unit.damage += 100;
+            unit.DamageLvl += 1;
+            Damage.fillAmount += 0.25f;
         }
-        else
-        Damage.fillAmount += 0.25f;
     }
     public void HpPlus()
     {
-        if (HP.fillAmount >= 1)
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        if (unit.HpLvl < 4)
         {
-
+            unit.maxHP += 100;
+            unit.HpLvl += 1;
+            HP.fillAmount += 0.25f;
         }
-        else
-        HP.fillAmount += 0.25f;
     }
     public void heal()
     {

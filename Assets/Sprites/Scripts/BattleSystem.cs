@@ -165,7 +165,11 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         dialogueText.text = "Ход врага";
-        enemyAction = (EnemyActionState)UnityEngine.Random.Range(0, 2);
+        //enemyAction = (EnemyActionState)UnityEngine.Random.Range(0, 2);
+        float randomValue = UnityEngine.Random.value;
+
+        if (randomValue <= 0.7f) enemyAction = EnemyActionState.ATTACK;
+        else enemyAction = EnemyActionState.REPAIR;
 
 
         yield return new WaitForSeconds(1f);
