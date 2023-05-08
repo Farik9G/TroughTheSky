@@ -57,7 +57,7 @@ public class BattleSystem : MonoBehaviour
 
         Vector3 enemyPos = new Vector3(0.91f, 0.3f, 0f);
         GameObject enemyGO = Instantiate(ObjectManager.instance.enemy, enemyPos, Quaternion.identity);
-        enemyGO.transform.localScale = new Vector3(0.07f, 0.07f, 0.07f);
+        enemyGO.transform.localScale = new Vector3(0.04f, 0.04f, 0.04f);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = "Ваш враг " + enemyUnit.unitName;
@@ -205,10 +205,22 @@ public class BattleSystem : MonoBehaviour
             ObjectManager.destroyedEnemies.Add(ObjectManager.instance.enemy.name);
             MainMenu.n1 = 1;
             ObjectManager.currentHp = playerUnit.currentHP;
+            rubers1.rubber1 += 15;
+            woods1.wood1 += 15;
+            foods1.food1 += 15;
+            metals1.metal1 += 15;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            ObjectManager.fwood = 20;
+            ObjectManager.fmetal = 20;
+            ObjectManager.frebber = 20;
+            ObjectManager.ffood = 20;
+            ObjectManager.rand = 1;
+
+
         }
         else if (state == BattleState.LOST)
         {
+            Destroy(playerPrefab);
             dialogueText.text = "Поражение";
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + -2);
         }

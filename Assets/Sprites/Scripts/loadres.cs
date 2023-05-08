@@ -12,5 +12,10 @@ public class loadres : MonoBehaviour
             SaveLoadManager.lres();
             MainMenu.n--;
         }
+        if (MainMenu.nn==1)
+        {
+            SaveLoadManager.lres();
+            MainMenu.nn--;
+        }
     }
 }

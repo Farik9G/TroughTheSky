@@ -54,8 +54,14 @@ public  class SaveLoadManager :MonoBehaviour
         public int currenthp;
         public int Maxhp;
         public int Hplvl;
+        public bool n1;
+        public bool n2;
+        public bool n3;
+        public int arist = 1;
+        public int scienc = 1;
+        public int military = 1;
 
-        public PlayerData(float metal, float wood, float rubber, float food , SurrogateVector3 position, List<string> destroyedEnemies, int damage, int damagelvl, int currenthp, int Maxhp, int Hplvl)
+        public PlayerData(float metal, float wood, float rubber, float food , SurrogateVector3 position, List<string> destroyedEnemies, int damage, int damagelvl, int currenthp, int Maxhp, int Hplvl, bool n1, bool  n2, bool n3,int arist, int scienc, int military)
         {
             this.metal = metal;
             this.wood = wood;
@@ -68,6 +74,12 @@ public  class SaveLoadManager :MonoBehaviour
             this.currenthp = currenthp;
             this.Maxhp = Maxhp;
             this.Hplvl = Hplvl;
+            this.n1 = n1;
+            this.n2 = n2;
+            this.n3 = n3;
+            this.arist = arist;
+            this.scienc = scienc;
+            this.military = military;
         }
     }
     [System.Serializable]
@@ -108,9 +120,16 @@ public  class SaveLoadManager :MonoBehaviour
         public int currenthp;
         public int Maxhp;
         public int Hplvl;
+        public bool n1;
+        public bool n2;
+        public bool n3;
+        public  int arist = 1;
+        public  int scienc = 1;
+        public  int military = 1;
 
 
-        public BattleData(float metal, float wood, float rubber, float food, SurrogateVector3 position, List<string> destroyedEnemies, int damage, int damagelvl, int currenthp, int Maxhp, int Hplvl)
+
+        public BattleData(float metal, float wood, float rubber, float food, SurrogateVector3 position, List<string> destroyedEnemies, int damage, int damagelvl, int currenthp, int Maxhp, int Hplvl, bool n1, bool n2, bool n3, int arist, int scienc, int military)
         {
             this.metal = metal;
             this.wood = wood;
@@ -123,6 +142,13 @@ public  class SaveLoadManager :MonoBehaviour
             this.currenthp = currenthp;
             this.Maxhp = Maxhp;
             this.Hplvl = Hplvl;
+            this.n1 = n1;
+            this.n2 = n2;
+            this.n3 = n3;
+            this.arist = arist;
+            this.scienc = scienc;
+            this.military = military;
+
         }
     }
     public static void Save(PlayerData data)
@@ -196,9 +222,16 @@ public  class SaveLoadManager :MonoBehaviour
         var damagelvl = unit.DamageLvl;
         var destroyedEnemies = ObjectManager.destroyedEnemies;
         SaveLoadManager.PlayerData.SurrogateVector3 position = player.transform.position;
+        var n1 = NewBehaviourScript.n1;
+        var n2 = NewBehaviourScript.n2;
+        var n3 = NewBehaviourScript.n3;
+        var artist = Collision.arist;
+        var scienc = Collision.scienc;
+        var military = Collision.military;
         // Сохранить данные игрока
-        PlayerData playerData = new PlayerData(a, b, c, d, position, destroyedEnemies, damage,damagelvl,currenthp,Maxhp,hplvl);
+        PlayerData playerData = new PlayerData(a, b, c, d, position, destroyedEnemies, damage,damagelvl,currenthp,Maxhp,hplvl,n1,n2,n3,artist, scienc, military);
         SaveLoadManager.Save(playerData);
+
 
     }
     public  void l1()
@@ -226,7 +259,7 @@ public  class SaveLoadManager :MonoBehaviour
             }
         }
 
-        MainMenu.nn1 = 10;
+        MainMenu.nn1 = 1;
     }
     public static void lres()
     {
@@ -235,6 +268,7 @@ public  class SaveLoadManager :MonoBehaviour
         woods1.wood1 = playerData.wood;
         rubers1.rubber1 = playerData.rubber;
         foods1.food1 = playerData.food;
+        Debug.Log("save");
     }
 
 }

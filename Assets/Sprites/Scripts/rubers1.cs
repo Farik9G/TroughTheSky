@@ -38,4 +38,9 @@ public class rubers1 : MonoBehaviour
             irubber1.fillAmount = irubber1.fillAmount - 0.0005f;
         }
     }
+
+    public void MinusRubber()
+    {
+        rubber1 -= 100;
+    }
 }

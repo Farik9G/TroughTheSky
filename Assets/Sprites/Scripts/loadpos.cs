@@ -5,6 +5,12 @@ using UnityEngine;
 public class loadpos : MonoBehaviour
 {
    public GameObject player;
+    public GameObject smoke1;
+    public GameObject smoke2;
+    public GameObject smoke3;
+    public GameObject button1;
+    public GameObject button2;
+    public GameObject button3;
     public void Awake()
     {
         if (MainMenu.n1 == 1)
@@ -34,16 +40,38 @@ public class loadpos : MonoBehaviour
             unit.DamageLvl = posdata.damagelvl;
             unit.maxHP = posdata.Maxhp;
             unit.HpLvl = posdata.Hplvl;
+            if (posdata.n1==false)
+            {
+                smoke1.SetActive(posdata.n1);
+                button1.SetActive(posdata.n1);
+            }
+            if (posdata.n2 == false)
+            {
+                Destroy(smoke1);
+                button2.SetActive(posdata.n2);
+            }
+            
+            if (posdata.n3 == false)
+            {
+                Destroy(smoke1);
+                button3.SetActive(posdata.n3);
+            }
+            
+            Collision.arist = posdata.arist;
+            Collision.scienc = posdata.scienc;
+            Collision.military = posdata.military;
+
+
 
             MainMenu.n1 = 10;
         }
         if (MainMenu.nn1 == 1)
         {
            SaveLoadManager.PlayerData playerData = SaveLoadManager.Load();
-            metals1.metal1 = playerData.metal;
-            woods1.wood1 = playerData.wood;
-            rubers1.rubber1 = playerData.rubber;
-            foods1.food1 = playerData.food;
+            metals1.metal1 += playerData.metal;
+            woods1.wood1 += playerData.wood;
+            rubers1.rubber1 += playerData.rubber;
+            foods1.food1 += playerData.food;
             player.transform.position = playerData.position;
             ObjectManager.destroyedEnemies = playerData.destroyedEnemies;
             Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
@@ -61,6 +89,25 @@ public class loadpos : MonoBehaviour
                     enemy.SetActive(false);
                 }
             }
+            if (playerData.n1 == false)
+            {
+                smoke1.SetActive(playerData.n1);
+                button1.SetActive(playerData.n1);
+            }
+            if (playerData.n2 == false)
+            {
+                Destroy(smoke1);
+                button2.SetActive(playerData.n2);
+            }
+
+            if (playerData.n3 == false)
+            {
+                Destroy(smoke1);
+                button3.SetActive(playerData.n3);
+            }
+            Collision.arist = playerData.arist;
+            Collision.scienc = playerData.scienc;
+            Collision.military = playerData.military;
 
             MainMenu.nn1 = 10;
         }

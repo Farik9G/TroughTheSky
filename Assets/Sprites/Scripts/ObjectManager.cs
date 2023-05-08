@@ -5,15 +5,26 @@ using UnityEngine;
 public class ObjectManager : MonoBehaviour
 {
     public static ObjectManager instance;
-
     public GameObject enemy;
     public GameObject player;
     public static int currentHp;
-
     public static List<string> destroyedEnemies = new List<string>();
+    public static bool pirateIsDead = false;
+    public static bool riotingIsDead = false;
+    public static int rand = 0;
+    public static int fwood;
+    public static int fmetal;
+    public static int frebber;
+    public static int ffood;
+   
+  
 
     private void Awake()
     {
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        unit.currentHP = currentHp;
+        discontent.DS = currentHp;
+        
         if (instance == null)
         {
             instance = this;
@@ -22,6 +33,20 @@ public class ObjectManager : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+        }
+
+
+    }
+    public void Update()
+    {
+        if (rand ==1)
+        {
+            SaveLoadManager.lres();
+            metals1.metal1 += fmetal;
+            woods1.wood1 += fwood;
+            rubers1.rubber1 += frebber;
+            foods1.food1 += ffood;
+            rand--;
         }
     }
 }
