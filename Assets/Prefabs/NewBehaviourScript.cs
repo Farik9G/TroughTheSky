@@ -4,25 +4,12 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public GameObject smoke1;
-    public static bool n1=true;
-    public static bool n2 = true;
-    public static bool n3 = true;
-    public GameObject smoke2;
-    public GameObject smoke3;
-    public void smok1()
-    {
-        n1 = false;
-        smoke1.SetActive(n1);
-    }
-    public void smok2()
-    {
-        n2 = false;
-        smoke2.SetActive(n2);
-    }
-    public void smok3()
-    {
-        n3 = false;
-        smoke3.SetActive(n3);
-    }
+    // Start is called before the first frame update
+    //public void ProverkaPizdezha()
+    //{
+    //    if (!ObjectManager.destroyedEnemies.Contains("MilitaryPirate"))
+    //    {
+
+    //    }
+    //}
 }
