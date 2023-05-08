@@ -57,7 +57,7 @@ public class BattleSystem : MonoBehaviour
 
         Vector3 enemyPos = new Vector3(0.91f, 0.3f, 0f);
         GameObject enemyGO = Instantiate(ObjectManager.instance.enemy, enemyPos, Quaternion.identity);
-        enemyGO.transform.localScale = new Vector3(0.04f, 0.04f, 0.04f);
+        enemyGO.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
         dialogueText.text = "Ваш враг " + enemyUnit.unitName;
