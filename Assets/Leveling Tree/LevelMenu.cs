@@ -39,7 +39,7 @@ public class LevelMenu : MonoBehaviour
             Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
             if (unit.DamageLvl < 4)
             {
-                unit.damage += 100;
+                unit.damage += 10;
                 unit.DamageLvl += 1;
                 Damage.fillAmount += 0.25f;
             }
@@ -55,7 +55,7 @@ public class LevelMenu : MonoBehaviour
             if (unit.HpLvl < 4)
             {
 
-                unit.maxHP += 100;
+                unit.maxHP += 10;
                 unit.HpLvl += 1;
                 HP.fillAmount += 0.25f;
             }
