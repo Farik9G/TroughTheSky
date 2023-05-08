@@ -11,6 +11,8 @@ public class ObjectManager : MonoBehaviour
     public static int currentHp;
 
     public static List<string> destroyedEnemies = new List<string>();
+    public static bool pirateIsDead = false;
+    public static bool riotingIsDead = false;
 
     private void Awake()
     {
