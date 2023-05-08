@@ -216,6 +216,7 @@ public class BattleSystem : MonoBehaviour
         }
         else if (state == BattleState.LOST)
         {
+            Destroy(playerPrefab);
             dialogueText.text = "Поражение";
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + -2);
         }
