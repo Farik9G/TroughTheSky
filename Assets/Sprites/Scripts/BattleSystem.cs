@@ -205,6 +205,10 @@ public class BattleSystem : MonoBehaviour
             ObjectManager.destroyedEnemies.Add(ObjectManager.instance.enemy.name);
             MainMenu.n1 = 1;
             ObjectManager.currentHp = playerUnit.currentHP;
+            rubers1.rubber1 += 15;
+            woods1.wood1 += 15;
+            foods1.food1 += 15;
+            metals1.metal1 += 15;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
         else if (state == BattleState.LOST)
