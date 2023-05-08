@@ -12,13 +12,21 @@ public class Collision : MonoBehaviour
     //public Observer obs;
     //public  ObjectManager objectManager = ObjectManager.instance;
     public NPCConversation PirateConversation;
+
     public NPCConversation AristocratConversation;
     public NPCConversation AristocratConversation2;
+    public NPCConversation AristocratConversation3;
+
     public NPCConversation ScientistConversation;
     public NPCConversation ScientistConversation2;
+    public NPCConversation ScientistConversation3;
+
     public NPCConversation MilitaryConversation;
     public NPCConversation MilitaryConversation2;
+    public NPCConversation MilitaryConversation3;
+
     public NPCConversation MilitaryPirateConversation;
+    public NPCConversation EndGame;
     public GameObject player;
     public static int arist = 1;
     public static int scienc = 1;
@@ -26,7 +34,6 @@ public class Collision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
         Debug.Log("Collision detected!");
         if (other.gameObject.tag == "Enemy")
         {
@@ -56,15 +63,15 @@ public class Collision : MonoBehaviour
             var military = Collision.military;
             SaveLoadManager.BattleData Data = new SaveLoadManager.BattleData(a, b, c, d, position, destroyedEnemies, damage, damagelvl, currenthp, Maxhp, hplvl,n1, n2, n3,artist, scienc, military);
             SaveLoadManager.SaveButle(Data);
-            if (other.name == "Pirate-D")
-            {
-                ConversationManager.Instance.StartConversation(PirateConversation);
-                ObjectManager.pirateIsDead = true;
-            }
             if (other.name == "Riot-D")
             {
                 ConversationManager.Instance.StartConversation(MilitaryPirateConversation);
                 ObjectManager.riotingIsDead = true;
+            }
+            else
+            {
+                ConversationManager.Instance.StartConversation(PirateConversation);
+                ObjectManager.pirateIsDead = true;
             }
 
         }
@@ -79,9 +86,13 @@ public class Collision : MonoBehaviour
             }
             else if (arist == 2) 
             {
+                arist++;
                 ConversationManager.Instance.StartConversation(AristocratConversation2);
                 ConversationManager.Instance.SetBool("Пиздеж", ObjectManager.pirateIsDead);
-
+            }
+            else
+            {
+                ConversationManager.Instance.StartConversation(AristocratConversation3);
             }
 
         }
@@ -95,8 +106,13 @@ public class Collision : MonoBehaviour
             }
             else if(scienc == 2)
             {
+                scienc++;
                 ConversationManager.Instance.StartConversation(ScientistConversation2);
                 ConversationManager.Instance.SetBool("Пиздеж", rubers1.rubber1 >= 100);
+            }
+            else
+            {
+                ConversationManager.Instance.StartConversation(ScientistConversation3);
             }
         }
 
@@ -109,16 +125,18 @@ public class Collision : MonoBehaviour
             }
             else if (military == 2)
             {
+                military++;
                 ConversationManager.Instance.StartConversation(MilitaryConversation2);
                 ConversationManager.Instance.SetBool("Пиздеж", ObjectManager.riotingIsDead);
             }
+            else { ConversationManager.Instance.StartConversation(MilitaryConversation3); }
 
         }
 
-        //if (other.gameObject.tag == "MilitaryPirate")
-        //{
-        //    ConversationManager.Instance.StartConversation(MilitaryPirateConversation2);
-        //}
+        if (other.gameObject.name == "Factory")
+        {
+            ConversationManager.Instance.StartConversation(EndGame);
+        }
 
     }
     public void Scene()
