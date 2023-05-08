@@ -19,6 +19,7 @@ public class Collision : MonoBehaviour
     public NPCConversation MilitaryConversation;
     public NPCConversation MilitaryConversation2;
     public NPCConversation MilitaryPirateConversation;
+    public NPCConversation EndGame;
     public GameObject player;
     public static int arist = 1;
     public static int scienc = 1;
@@ -26,7 +27,6 @@ public class Collision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-
         Debug.Log("Collision detected!");
         if (other.gameObject.tag == "Enemy")
         {
@@ -109,10 +109,10 @@ public class Collision : MonoBehaviour
 
         }
 
-        //if (other.gameObject.tag == "MilitaryPirate")
-        //{
-        //    ConversationManager.Instance.StartConversation(MilitaryPirateConversation2);
-        //}
+        if (other.gameObject.name == "Factory")
+        {
+            ConversationManager.Instance.StartConversation(EndGame);
+        }
 
     }
     public void Scene()
