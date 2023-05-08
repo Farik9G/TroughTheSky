@@ -144,7 +144,7 @@ public class PC : MonoBehaviour
     private void Move(Vector2 direction)
     {
         Vector3Int pT = PotentialTile(direction);
-        if (groundTilemap.GetTile(pT) != null && !collisionTilemap.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap1.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap2.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap3.HasTile(pT + new Vector3Int(-2, -1, 0)))
+        if (groundTilemap.GetTile(pT) != null && !collisionTilemap1.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap2.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap3.HasTile(pT + new Vector3Int(-2, -1, 0)))
         {
             transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0));
             currentPos = pT;
