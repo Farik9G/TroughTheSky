@@ -206,6 +206,13 @@ public class BattleSystem : MonoBehaviour
             MainMenu.n1 = 1;
             ObjectManager.currentHp = playerUnit.currentHP;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            ObjectManager.fwood = 20;
+            ObjectManager.fmetal = 20;
+            ObjectManager.frebber = 20;
+            ObjectManager.ffood = 20;
+            ObjectManager.rand = 1;
+
+
         }
         else if (state == BattleState.LOST)
         {
