@@ -32,48 +32,52 @@ public class LevelMenu : MonoBehaviour
             panel.SetActive(false);
         }
     }
-    public void acces1s()
-    {
-        button1.SetActive(false);
-    }
-    public void acces2s()
-    {
-        button2.SetActive(false);
-    }
-    public void acces3s()
-    {
-        button3.SetActive(false);
-    }
     public void DamagePlus()
     {
-        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
-        if (unit.DamageLvl < 4)
+        if (metals1.metal1 >= 20)
         {
-            unit.damage += 100;
-            unit.DamageLvl += 1;
-            Damage.fillAmount += 0.25f;
+            Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+            if (unit.DamageLvl < 4)
+            {
+                unit.damage += 100;
+                unit.DamageLvl += 1;
+                Damage.fillAmount += 0.25f;
+            }
+            metals1.metal1 = -20;
         }
+        
     }
     public void HpPlus()
     {
-        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
-        if (unit.HpLvl < 4)
+        if (woods1.wood1 >= 20)
         {
+            Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+            if (unit.HpLvl < 4)
+            {
 
-            unit.maxHP += 100;
-            unit.HpLvl += 1;
-            HP.fillAmount += 0.25f;
+                unit.maxHP += 100;
+                unit.HpLvl += 1;
+                HP.fillAmount += 0.25f;
+            }
+            woods1.wood1 -= 20;
         }
     }
     public void heal()
     {
-        discontent.DS += 25;
+        if ((woods1.wood1 >= 10)& (metals1.metal1 >= 10) & (woods1.wood1 >= 30))
+        {
+            discontent.DS += 25;
+            woods1.wood1 -= 10;
+            metals1.metal1 -= 10;
+            woods1.wood1 -= 30;
+        }
     }
     public void Update()
     {
-        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        //Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
         if (MainMenu.startgame==10)
         {
+            Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
             int a = unit.HpLvl;
             int b = unit.DamageLvl;
 
@@ -83,6 +87,7 @@ public class LevelMenu : MonoBehaviour
         }
         if (MainMenu.nn1 == 10)
         {
+            Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
             int a = unit.HpLvl;
             int b = unit.DamageLvl;
 
@@ -93,6 +98,7 @@ public class LevelMenu : MonoBehaviour
         }
         if (MainMenu.n1 == 10)
         {
+            Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
             int a = unit.HpLvl;
             int b = unit.DamageLvl;
 
