@@ -232,6 +232,7 @@ public  class SaveLoadManager :MonoBehaviour
         PlayerData playerData = new PlayerData(a, b, c, d, position, destroyedEnemies, damage,damagelvl,currenthp,Maxhp,hplvl,n1,n2,n3,artist, scienc, military);
         SaveLoadManager.Save(playerData);
 
+
     }
     public  void l1()
     {
@@ -258,7 +259,7 @@ public  class SaveLoadManager :MonoBehaviour
             }
         }
 
-        MainMenu.nn1 = 10;
+        MainMenu.nn1 = 1;
     }
     public static void lres()
     {
@@ -267,6 +268,7 @@ public  class SaveLoadManager :MonoBehaviour
         woods1.wood1 = playerData.wood;
         rubers1.rubber1 = playerData.rubber;
         foods1.food1 = playerData.food;
+        Debug.Log("save");
     }
 
 }

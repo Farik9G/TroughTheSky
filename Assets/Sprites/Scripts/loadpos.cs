@@ -45,31 +45,18 @@ public class loadpos : MonoBehaviour
                 smoke1.SetActive(posdata.n1);
                 button1.SetActive(posdata.n1);
             }
-            else
-            {
-                smoke1.SetActive(posdata.n1);
-                button1.SetActive(posdata.n1);
-            }
             if (posdata.n2 == false)
             {
-                smoke1.SetActive(posdata.n2);
+                Destroy(smoke1);
                 button2.SetActive(posdata.n2);
             }
-            else
-            {
-                smoke1.SetActive(posdata.n2);
-                button2.SetActive(posdata.n2);
-            }
+            
             if (posdata.n3 == false)
             {
-                smoke1.SetActive(posdata.n3);
+                Destroy(smoke1);
                 button3.SetActive(posdata.n3);
             }
-            else
-            {
-                smoke1.SetActive(posdata.n3);
-                button3.SetActive(posdata.n3);
-            }
+            
             Collision.arist = posdata.arist;
             Collision.scienc = posdata.scienc;
             Collision.military = posdata.military;
@@ -81,10 +68,10 @@ public class loadpos : MonoBehaviour
         if (MainMenu.nn1 == 1)
         {
            SaveLoadManager.PlayerData playerData = SaveLoadManager.Load();
-            metals1.metal1 = playerData.metal;
-            woods1.wood1 = playerData.wood;
-            rubers1.rubber1 = playerData.rubber;
-            foods1.food1 = playerData.food;
+            metals1.metal1 += playerData.metal;
+            woods1.wood1 += playerData.wood;
+            rubers1.rubber1 += playerData.rubber;
+            foods1.food1 += playerData.food;
             player.transform.position = playerData.position;
             ObjectManager.destroyedEnemies = playerData.destroyedEnemies;
             Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
@@ -105,28 +92,18 @@ public class loadpos : MonoBehaviour
             if (playerData.n1 == false)
             {
                 smoke1.SetActive(playerData.n1);
-            }
-            else
-            {
-                smoke1.SetActive(playerData.n1);
+                button1.SetActive(playerData.n1);
             }
             if (playerData.n2 == false)
             {
-                smoke1.SetActive(playerData.n2);
+                Destroy(smoke1);
+                button2.SetActive(playerData.n2);
+            }
 
-            }
-            else
-            {
-                smoke1.SetActive(playerData.n2);
-            }
             if (playerData.n3 == false)
             {
-                smoke1.SetActive(playerData.n3);
-
-            }
-            else
-            {
-                smoke1.SetActive(playerData.n3);
+                Destroy(smoke1);
+                button3.SetActive(playerData.n3);
             }
             Collision.arist = playerData.arist;
             Collision.scienc = playerData.scienc;

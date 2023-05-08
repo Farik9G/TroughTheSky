@@ -19,8 +19,9 @@ public class metals1 : MonoBehaviour
     public static float metal1 = 0f;
     public Image imetal1;
     // Start is called before the first frame update
-    void Start() 
+    void Start()
     {
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
         metal1 = starmetal1;
         imetal1.fillAmount = starmetal1 / 100;
     }
@@ -28,7 +29,6 @@ public class metals1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (metal1 / 100 > imetal1.fillAmount)
         {
             imetal1.fillAmount = imetal1.fillAmount + 0.0005f;

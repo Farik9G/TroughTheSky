@@ -24,6 +24,7 @@ public class ObjectManager : MonoBehaviour
         Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
         unit.currentHP = currentHp;
         discontent.DS = currentHp;
+        
         if (instance == null)
         {
             instance = this;
@@ -40,6 +41,7 @@ public class ObjectManager : MonoBehaviour
     {
         if (rand ==1)
         {
+            SaveLoadManager.lres();
             metals1.metal1 += fmetal;
             woods1.wood1 += fwood;
             rubers1.rubber1 += frebber;
