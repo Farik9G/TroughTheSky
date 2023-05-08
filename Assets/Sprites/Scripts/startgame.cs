@@ -10,11 +10,11 @@ public class startgame : MonoBehaviour
     {
         if (MainMenu.startgame == 1)
         {
-            player.transform.position = new Vector3(-3.824f, -3.216f, 1.09f);
-            metals1.metal1 = 66f;
-            woods1.wood1 = 66f;
-            rubers1.rubber1 = 66f;
-            foods1.food1 = 66f;
+            player.transform.position = new Vector3(-7.92f, 4.78f, 0f);
+            metals1.metal1 = 10f;
+            woods1.wood1 = 10f;
+            rubers1.rubber1 = 10f;
+            foods1.food1 = 10f;
             discontent.DS = 100;
             ObjectManager.destroyedEnemies = new List<string>();
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");

@@ -16,6 +16,8 @@ public class ObjectManager : MonoBehaviour
 
     private void Awake()
     {
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        unit.currentHP = currentHp;
         if (instance == null)
         {
             instance = this;

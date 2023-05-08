@@ -48,7 +48,13 @@ public class Collision : MonoBehaviour
             var destroyedEnemies = ObjectManager.destroyedEnemies;
             Debug.Log("transform position in collision" + transform.position);
             SaveLoadManager.BattleData.SurrogateVector3 position = this.transform.position;
-            SaveLoadManager.BattleData Data = new SaveLoadManager.BattleData(a, b, c, d, position, destroyedEnemies, damage, damagelvl, currenthp, Maxhp, hplvl);
+            var n1 = NewBehaviourScript.n1;
+            var n2 = NewBehaviourScript.n2;
+            var n3 = NewBehaviourScript.n3;
+            var artist = Collision.arist;
+            var scienc = Collision.scienc;
+            var military = Collision.military;
+            SaveLoadManager.BattleData Data = new SaveLoadManager.BattleData(a, b, c, d, position, destroyedEnemies, damage, damagelvl, currenthp, Maxhp, hplvl,n1, n2, n3,artist, scienc, military);
             SaveLoadManager.SaveButle(Data);
             if (other.name == "Pirate-D")
             {
