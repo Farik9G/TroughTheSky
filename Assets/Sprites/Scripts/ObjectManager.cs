@@ -12,10 +12,10 @@ public class ObjectManager : MonoBehaviour
     public static bool pirateIsDead = false;
     public static bool riotingIsDead = false;
     public static int rand = 0;
-    public static int fwood;
-    public static int fmetal;
-    public static int frebber;
-    public static int ffood;
+    public static float fwood;
+    public static float fmetal;
+    public static float frebber;
+    public static float ffood;
    
   
 

@@ -43,6 +43,7 @@ public class Collision : MonoBehaviour
             ObjectManager.instance.enemy = other.gameObject;
             ObjectManager.instance.player = gameObject;
             var a = metals1.metal1;
+            Debug.Log(a.ToString());
             var b = woods1.wood1;
             var c = rubers1.rubber1;
             var d = foods1.food1;
@@ -63,6 +64,7 @@ public class Collision : MonoBehaviour
             var military = Collision.military;
             SaveLoadManager.BattleData Data = new SaveLoadManager.BattleData(a, b, c, d, position, destroyedEnemies, damage, damagelvl, currenthp, Maxhp, hplvl,n1, n2, n3,artist, scienc, military);
             SaveLoadManager.SaveButle(Data);
+            SaveLoadManager.saveres();
             if (other.name == "Riot-D")
             {
                 ConversationManager.Instance.StartConversation(MilitaryPirateConversation);
