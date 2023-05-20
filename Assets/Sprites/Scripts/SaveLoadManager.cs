@@ -257,7 +257,7 @@ public  class SaveLoadManager :MonoBehaviour
                 enemy.SetActive(false);
             }
         }
-
+        GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PC>().SetCurPos();
         MainMenu.nn1 = 10;
     }
     public static void lres()
