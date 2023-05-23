@@ -28,6 +28,7 @@ public class woods1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (wood1 / 100 > iWood1.fillAmount)
         {
             iWood1.fillAmount = iWood1.fillAmount + 0.0005f;

@@ -13,16 +13,16 @@ public class NewBehaviourScript : MonoBehaviour
     public void smok1()
     {
         n1 = false;
-        smoke1.SetActive(n1);
+        Destroy(smoke1);
     }
     public void smok2()
     {
         n2 = false;
-        smoke2.SetActive(n2);
+        Destroy(smoke2); ;
     }
     public void smok3()
     {
         n3 = false;
-        smoke3.SetActive(n3);
+        Destroy(smoke3);
     }
 }

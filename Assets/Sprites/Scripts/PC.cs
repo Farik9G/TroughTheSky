@@ -166,13 +166,62 @@ public class PC : MonoBehaviour
     private void Move(Vector2 direction)
     {
         Vector3Int pT = PotentialTile(direction);
-        if (groundTilemap.GetTile(pT) != null && !collisionTilemap1.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap2.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap3.HasTile(pT + new Vector3Int(-2, -1, 0)))
+        if ((NewBehaviourScript.n1 == true) & (NewBehaviourScript.n2 == true) & (NewBehaviourScript.n3 == true))
+        {
+            if (groundTilemap.GetTile(pT) != null && !collisionTilemap1.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap2.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap3.HasTile(pT + new Vector3Int(-2, -1, 0)))
+            {
+                transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0));
+                currentPos = pT;
+            }
+        }
+        if ((NewBehaviourScript.n1 == false) & (NewBehaviourScript.n2 == false) & (NewBehaviourScript.n3 == false))
+        {
+            if (groundTilemap.GetTile(pT) != null )
+            {
+                transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0));
+                currentPos = pT;
+            }
+        }
+        if ((NewBehaviourScript.n1 == false) & (NewBehaviourScript.n2 == true) & (NewBehaviourScript.n3 == true))
+        {
+            if (groundTilemap.GetTile(pT) != null && !collisionTilemap2.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap3.HasTile(pT + new Vector3Int(-2, -1, 0)))
+            {
+                transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0));
+                currentPos = pT;
+
+
+            }
+        }
+        if ((NewBehaviourScript.n1 == false) & (NewBehaviourScript.n2 == false) & (NewBehaviourScript.n3 == true))
         {
             transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0));
             currentPos = pT;
         }
+        if ((NewBehaviourScript.n1 == true) & (NewBehaviourScript.n2 == false) & (NewBehaviourScript.n3 == false))
+        {
+            if (groundTilemap.GetTile(pT) != null && !collisionTilemap1.HasTile(pT + new Vector3Int(-2, -1, 0)))
+            {
+                transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0));
+                currentPos = pT;
+            }
+        }
+        if ((NewBehaviourScript.n1 == true) & (NewBehaviourScript.n2 == false) & (NewBehaviourScript.n3 == true))
+        {
+            if (groundTilemap.GetTile(pT) != null && !collisionTilemap1.HasTile(pT + new Vector3Int(-2, -1, 0)) && !collisionTilemap3.HasTile(pT + new Vector3Int(-2, -1, 0)))
+            {
+                transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0));
+                currentPos = pT;
+            }
+        }
+        if ((NewBehaviourScript.n1 == false) & (NewBehaviourScript.n2 == true) & (NewBehaviourScript.n3 == false))
+        {
+            if (groundTilemap.GetTile(pT) != null && !collisionTilemap2.HasTile(pT + new Vector3Int(-2, -1, 0)))
+            {
+                transform.position = (groundTilemap.GetCellCenterWorld(pT) - new Vector3(groundTilemap.cellSize.x / 2f, groundTilemap.cellSize.y / 4f, 0));
+                currentPos = pT;
+            }
+        }
     }
-
     private Vector3Int PotentialTile(Vector2 direction)
     {
         if (direction.x == 1 && direction.y == 0) return new Vector3Int(0, -1, 0) + currentPos;
