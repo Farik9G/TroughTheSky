@@ -69,16 +69,17 @@ public class LevelMenu : MonoBehaviour
             if (discontent.DS+25>100)
             {
                 discontent.DS = 100;
-                woods1.wood1 -= 10;
+                foods1.food1 -= 20;
                 metals1.metal1 -= 10;
                 woods1.wood1 -= 30;
             }
             else
             {
+                foods1.food1 -= 20;
                 discontent.DS += 25;
-                woods1.wood1 -= 10;
                 metals1.metal1 -= 10;
                 woods1.wood1 -= 30;
+                
             }
             
         }
@@ -121,16 +122,17 @@ public class LevelMenu : MonoBehaviour
         if (NewBehaviourScript.n1==false)
         {
             Destroy(button1);
+            button2.SetActive(false);
         }
         if (NewBehaviourScript.n2 == false)
         {
             Destroy(button2);
-            //button2.SetActive(false);
+            button2.SetActive(false);
         }
         if (NewBehaviourScript.n3 == false)
         {
             Destroy(button3);
-            // button3.SetActive(false);
+             button3.SetActive(false);
         }
     }
 }

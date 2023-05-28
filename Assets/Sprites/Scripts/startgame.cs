@@ -11,10 +11,10 @@ public class startgame : MonoBehaviour
         if (MainMenu.startgame == 1)
         {
             player.transform.position = new Vector3(-7.92f, 4.78f, 0f);
-            metals1.metal1 = 10f;
-            woods1.wood1 = 10f;
-            rubers1.rubber1 = 10f;
-            foods1.food1 = 10f;
+            metals1.metal1 = 20f;
+            woods1.wood1 = 20f;
+            rubers1.rubber1 = 20f;
+            foods1.food1 = 20f;
             discontent.DS = 100;
             ObjectManager.destroyedEnemies = new List<string>();
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -27,7 +27,7 @@ public class startgame : MonoBehaviour
                 }
             }
             Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
-            unit.damage = 10;
+            unit.damage = 25;
             unit.currentHP = 100;
             unit.DamageLvl = 0;
             unit.maxHP = 100;
