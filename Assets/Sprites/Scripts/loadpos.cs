@@ -42,18 +42,18 @@ public class loadpos : MonoBehaviour
             unit.HpLvl = posdata.Hplvl;
             if (posdata.n1==false)
             {
-                smoke1.SetActive(posdata.n1);
+                Destroy(smoke1);
                 button1.SetActive(posdata.n1);
             }
             if (posdata.n2 == false)
             {
-                Destroy(smoke1);
+                Destroy(smoke2);
                 button2.SetActive(posdata.n2);
             }
             
             if (posdata.n3 == false)
             {
-                Destroy(smoke1);
+                Destroy(smoke3);
                 button3.SetActive(posdata.n3);
             }
             
@@ -99,13 +99,14 @@ public class loadpos : MonoBehaviour
             }
             if (playerData.n2 == false)
             {
-                Destroy(smoke1);
+                Destroy(smoke2);
                 button2.SetActive(playerData.n2);
+                
             }
 
             if (playerData.n3 == false)
             {
-                Destroy(smoke1);
+                Destroy(smoke3);
                 button3.SetActive(playerData.n3);
             }
             Collision.arist = playerData.arist;

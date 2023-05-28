@@ -168,7 +168,31 @@ public  class SaveLoadManager :MonoBehaviour
 
 
     }
-        public static void Save(PlayerData data)
+    [System.Serializable]
+    public class tuman
+    {
+        public bool n1;
+        public bool n2;
+        public bool n3;
+        public tuman(bool n1, bool n2, bool n3)
+        {
+            this.n1 = n1;
+            this.n2 = n2;
+            this.n3 = n3;
+        }
+
+
+    }
+    public static void SaveT(tuman data)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/tunan.dat";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+    public static void Save(PlayerData data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player_data.dat";
@@ -205,6 +229,25 @@ public  class SaveLoadManager :MonoBehaviour
             FileStream stream = new FileStream(path, FileMode.Open);
 
             PlayerData data = formatter.Deserialize(stream) as PlayerData;
+            stream.Close();
+
+            return data;
+        }
+        else
+        {
+            Debug.LogError("Save file not found in " + path);
+            return null;
+        }
+    }
+    public static tuman LoadT()
+    {
+        string path = Application.persistentDataPath + "/tunan.dat";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            tuman data = formatter.Deserialize(stream) as tuman;
             stream.Close();
 
             return data;
@@ -295,6 +338,9 @@ public  class SaveLoadManager :MonoBehaviour
         unit.maxHP = playerData.Maxhp;
         unit.DamageLvl = playerData.damagelvl;
         unit.HpLvl = playerData.Hplvl;
+        NewBehaviourScript.n1 = playerData.n1;
+        NewBehaviourScript.n2 = playerData.n2;
+        NewBehaviourScript.n3 = playerData.n3;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         {
@@ -324,6 +370,19 @@ public  class SaveLoadManager :MonoBehaviour
         Debug.Log(a.ToString());
         ResData player = new ResData(a, b, c, d);
         SaveLoadManager.SaveRes(player);
+
+    }
+    public static void Savetuman()
+    {
+        var n1 = NewBehaviourScript.n1;
+        var n2 = NewBehaviourScript.n2;
+        var n3 = NewBehaviourScript.n3;
+        tuman tuman = new tuman(n1,n2,n3);
+        SaveLoadManager.SaveT(tuman);
+
+    }
+    public static void tumanres()
+    {
 
     }
 
