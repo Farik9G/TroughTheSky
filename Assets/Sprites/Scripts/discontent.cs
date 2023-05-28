@@ -19,6 +19,8 @@ public class discontent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        DS = unit.currentHP;
         if (DS / 100 > ds.fillAmount)
         {
             ds.fillAmount = ds.fillAmount + 0.0005f;
@@ -26,6 +28,15 @@ public class discontent : MonoBehaviour
         if (DS / 100 < ds.fillAmount)
         {
             ds.fillAmount = ds.fillAmount - 0.0005f;
+        }
+    }
+
+    public void Increasebar()
+    {
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        if (unit.HpLvl < 4)
+        {
+            ds.fillAmount *= 1.25f;
         }
     }
 }

@@ -16,6 +16,10 @@ public class Unit : MonoBehaviour
 
     public int DamageLvl = 0;
     public int HpLvl = 0;
+    public float wood;
+    public float metal;
+    public float rubber;
+    public float food;
     [SerializeField]
     public bool TakeDamage(int dmg)
     {

@@ -15,10 +15,10 @@ public class startcHaracteristics : MonoBehaviour
 {
     public Image HP;
     public Image Damage;
-    void Start()
+    /*void Start()
     {
         HP.fillAmount = 0f;
         Damage.fillAmount = 0f;
-    }
+    }*/
 
 }
