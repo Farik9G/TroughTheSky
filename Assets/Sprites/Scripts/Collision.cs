@@ -88,7 +88,7 @@ public class Collision : MonoBehaviour
             }
             else if (arist == 2) 
             {
-                arist++;
+                if (ObjectManager.pirateIsDead) arist++;
                 ConversationManager.Instance.StartConversation(AristocratConversation2);
                 ConversationManager.Instance.SetBool("Пиздеж", ObjectManager.pirateIsDead);
             }
@@ -108,7 +108,7 @@ public class Collision : MonoBehaviour
             }
             else if(scienc == 2)
             {
-                scienc++;
+                if (rubers1.rubber1 >= 100) scienc++;
                 ConversationManager.Instance.StartConversation(ScientistConversation2);
                 ConversationManager.Instance.SetBool("Пиздеж", rubers1.rubber1 >= 100);
             }
@@ -127,7 +127,7 @@ public class Collision : MonoBehaviour
             }
             else if (military == 2)
             {
-                military++;
+                if (ObjectManager.riotingIsDead) military++;
                 ConversationManager.Instance.StartConversation(MilitaryConversation2);
                 ConversationManager.Instance.SetBool("Пиздеж", ObjectManager.riotingIsDead);
             }
