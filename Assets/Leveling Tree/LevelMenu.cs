@@ -19,6 +19,7 @@ public class LevelMenu : MonoBehaviour
     public GameObject button3;
     public Image HP;
     public Image Damage;
+    public Slider slider;
     //GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
     //public Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
     public void Lvl()
@@ -65,10 +66,12 @@ public class LevelMenu : MonoBehaviour
     public void heal()
     {
         if ((woods1.wood1 >= 10)&& (metals1.metal1 >= 10) &&(woods1.wood1 >= 30))
-        {   
-            if (discontent.DS+25>100)
+        {
+            Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+            if (unit.currentHP+25>unit.maxHP)
             {
-                discontent.DS = 100;
+                unit.currentHP = unit.maxHP;
+                slider.value = unit.currentHP;
                 foods1.food1 -= 20;
                 metals1.metal1 -= 10;
                 woods1.wood1 -= 30;
@@ -76,7 +79,8 @@ public class LevelMenu : MonoBehaviour
             else
             {
                 foods1.food1 -= 20;
-                discontent.DS += 25;
+                unit.currentHP += 25;
+                slider.value = unit.currentHP;
                 metals1.metal1 -= 10;
                 woods1.wood1 -= 30;
                 
