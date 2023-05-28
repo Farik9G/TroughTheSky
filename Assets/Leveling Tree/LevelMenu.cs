@@ -43,7 +43,7 @@ public class LevelMenu : MonoBehaviour
                 unit.DamageLvl += 1;
                 Damage.fillAmount += 0.25f;
             }
-            metals1.metal1 = -20;
+            metals1.metal1 -= 20;
         }
         
     }
@@ -64,12 +64,23 @@ public class LevelMenu : MonoBehaviour
     }
     public void heal()
     {
-        if ((woods1.wood1 >= 10)& (metals1.metal1 >= 10) & (woods1.wood1 >= 30))
-        {
-            discontent.DS += 25;
-            woods1.wood1 -= 10;
-            metals1.metal1 -= 10;
-            woods1.wood1 -= 30;
+        if ((woods1.wood1 >= 10)&& (metals1.metal1 >= 10) &&(woods1.wood1 >= 30))
+        {   
+            if (discontent.DS+25>100)
+            {
+                discontent.DS = 100;
+                woods1.wood1 -= 10;
+                metals1.metal1 -= 10;
+                woods1.wood1 -= 30;
+            }
+            else
+            {
+                discontent.DS += 25;
+                woods1.wood1 -= 10;
+                metals1.metal1 -= 10;
+                woods1.wood1 -= 30;
+            }
+            
         }
     }
     public void Update()
@@ -106,6 +117,20 @@ public class LevelMenu : MonoBehaviour
             Damage.fillAmount = b * 0.25f;
             Debug.Log("Yeds");
             MainMenu.n1 = 0;
+        }
+        if (NewBehaviourScript.n1==false)
+        {
+            Destroy(button1);
+        }
+        if (NewBehaviourScript.n2 == false)
+        {
+            Destroy(button2);
+            //button2.SetActive(false);
+        }
+        if (NewBehaviourScript.n3 == false)
+        {
+            Destroy(button3);
+            // button3.SetActive(false);
         }
     }
 }

@@ -80,6 +80,9 @@ public class loadpos : MonoBehaviour
             unit.maxHP = playerData.Maxhp;
             unit.DamageLvl = playerData.damagelvl;
             unit.HpLvl = playerData.Hplvl;
+            NewBehaviourScript.n1 = playerData.n1;
+            NewBehaviourScript.n2 = playerData.n2;
+            NewBehaviourScript.n3 = playerData.n3;
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies)
             {
@@ -91,7 +94,7 @@ public class loadpos : MonoBehaviour
             }
             if (playerData.n1 == false)
             {
-                smoke1.SetActive(playerData.n1);
+                Destroy(smoke1);
                 button1.SetActive(playerData.n1);
             }
             if (playerData.n2 == false)
