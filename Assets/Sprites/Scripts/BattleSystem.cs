@@ -212,7 +212,7 @@ public class BattleSystem : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
             ObjectManager.fwood = 25;
             ObjectManager.fmetal = 25;
-            ObjectManager.frebber = 25;
+            ObjectManager.frebber = 5;
             ObjectManager.ffood = 25;
             ObjectManager.rand = 1;
 
