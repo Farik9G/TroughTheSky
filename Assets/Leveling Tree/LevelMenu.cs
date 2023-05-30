@@ -40,7 +40,7 @@ public class LevelMenu : MonoBehaviour
             Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
             if (unit.DamageLvl < 4)
             {
-                unit.damage += 10;
+                unit.damage += 25;
                 unit.DamageLvl += 1;
                 Damage.fillAmount += 0.25f;
             }
@@ -56,7 +56,8 @@ public class LevelMenu : MonoBehaviour
             if (unit.HpLvl < 4)
             {
 
-                unit.maxHP += 10;
+                unit.maxHP += 25;
+                unit.currentHP = unit.maxHP;
                 unit.HpLvl += 1;
                 HP.fillAmount += 0.25f;
             }
@@ -126,17 +127,17 @@ public class LevelMenu : MonoBehaviour
         if (NewBehaviourScript.n1==false)
         {
             Destroy(button1);
-            button2.SetActive(false);
+            
         }
         if (NewBehaviourScript.n2 == false)
         {
             Destroy(button2);
-            button2.SetActive(false);
+            
         }
         if (NewBehaviourScript.n3 == false)
         {
             Destroy(button3);
-             button3.SetActive(false);
+             
         }
     }
 }

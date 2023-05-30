@@ -16,7 +16,7 @@ public class BattleHUD : MonoBehaviour
     {
         nameText.text = unit.unitName;
         damageText.text = "ÓÐÎÍ " + unit.damage;
-        hpText.text = "ÍÐ " + unit.maxHP;
+        hpText.text = "ÍÐ " + unit.currentHP;
         hpSlider.maxValue = unit.maxHP;
         hpSlider.value = unit.currentHP;
     }
