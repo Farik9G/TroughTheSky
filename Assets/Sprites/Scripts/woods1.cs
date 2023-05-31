@@ -31,12 +31,12 @@ public class woods1 : MonoBehaviour
         
         if (wood1 / 100 > iWood1.fillAmount)
         {
-            iWood1.fillAmount = iWood1.fillAmount + 0.005f;
+            iWood1.fillAmount = iWood1.fillAmount + 0.0005f;
         }
         if (wood1 / 100 < iWood1.fillAmount)
 
         {
-            iWood1.fillAmount = iWood1.fillAmount - 0.005f;
+            iWood1.fillAmount = iWood1.fillAmount - 0.0005f;
         }
     }
 }

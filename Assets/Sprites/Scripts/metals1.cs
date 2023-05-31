@@ -31,11 +31,11 @@ public class metals1 : MonoBehaviour
     {
         if (metal1 / 100 > imetal1.fillAmount)
         {
-            imetal1.fillAmount = imetal1.fillAmount + 0.005f;
+            imetal1.fillAmount = imetal1.fillAmount + 0.0005f;
         }
         if (metal1 / 100 < imetal1.fillAmount)
         {
-            imetal1.fillAmount = imetal1.fillAmount - 0.005f;
+            imetal1.fillAmount = imetal1.fillAmount - 0.0005f;
         }
         
     }
