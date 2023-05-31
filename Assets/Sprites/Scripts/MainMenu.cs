@@ -11,10 +11,16 @@ public class MainMenu : MonoBehaviour
     public static int nn = 0;
     public static int nn1 = 0;
     public static int startgame=0;
+    public GameObject prologue;
     public void PlayGame()
     {
         startgame = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
+
+    public void Prologue()
+    {
+        prologue.SetActive(true);
     }
     public void LoadGame()
     {
