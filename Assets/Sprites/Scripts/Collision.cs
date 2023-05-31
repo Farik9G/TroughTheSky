@@ -27,6 +27,7 @@ public class Collision : MonoBehaviour
 
     public NPCConversation MilitaryPirateConversation;
     public NPCConversation EndGame;
+    public GameObject Epilogue;
     public GameObject player;
     public static int arist = 1;
     public static int scienc = 1;
@@ -137,7 +138,10 @@ public class Collision : MonoBehaviour
 
         if (other.gameObject.name == "Factory")
         {
-            ConversationManager.Instance.StartConversation(EndGame);
+            Debug.Log("Factory");
+            //GameObject.Find("Epilogue").SetActive(true);
+            Epilogue.SetActive(true);
+            //ConversationManager.Instance.StartConversation(EndGame);
         }
 
     }

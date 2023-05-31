@@ -12,24 +12,27 @@ public class discontent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DS = startdiscontent;
-        ds.fillAmount = startdiscontent / 100;
+        //DS = startdiscontent;
+        //ds.fillAmount = startdiscontent / 100;
+        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+        ds.fillAmount = unit.currentHP / 100.0f;
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
-        DS = unit.currentHP;
-        if (DS / 100 > ds.fillAmount)
-        {
-            ds.fillAmount = ds.fillAmount + 0.0005f;
-        }
-        if (DS / 100 < ds.fillAmount)
-        {
-            ds.fillAmount = ds.fillAmount - 0.0005f;
-        }
-    }
+    //void Update()
+    //{
+    //    Unit unit = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Unit>();
+    //    DS = unit.currentHP;
+    //    if (DS / 100 > ds.fillAmount)
+    //    {
+    //        ds.fillAmount = ds.fillAmount + 0.0005f;
+    //    }
+    //    if (DS / 100 < ds.fillAmount)
+    //    {
+    //        ds.fillAmount = ds.fillAmount - 0.0005f;
+    //    }
+    //}
 
     public void Increasebar()
     {
