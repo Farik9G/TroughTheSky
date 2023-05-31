@@ -126,16 +126,19 @@ public class LevelMenu : MonoBehaviour
         }
         if (NewBehaviourScript.n1==false)
         {
+
             Destroy(button1);
             
         }
         if (NewBehaviourScript.n2 == false)
         {
+
             Destroy(button2);
             
         }
         if (NewBehaviourScript.n3 == false)
         {
+
             Destroy(button3);
              
         }
