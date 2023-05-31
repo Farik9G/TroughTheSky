@@ -99,7 +99,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator PlayerRepair()
     {
-        playerUnit.Repair(5);
+        playerUnit.Repair(playerUnit.maxHP / 10);
 
         playerHUD.SetHP(playerUnit.currentHP);
         dialogueText.text = "Здоровье восстановлено";
@@ -210,10 +210,10 @@ public class BattleSystem : MonoBehaviour
            // foods1.food1 += 15;
            // metals1.metal1 += 15;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            ObjectManager.fwood = 25;
-            ObjectManager.fmetal = 25;
-            ObjectManager.frebber = 5;
-            ObjectManager.ffood = 25;
+            ObjectManager.fwood = 10;
+            ObjectManager.fmetal = 10;
+            ObjectManager.frebber = 10;
+            ObjectManager.ffood = 10;
             ObjectManager.rand = 1;
 
 

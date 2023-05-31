@@ -6,16 +6,16 @@ public class DialogsHelper : MonoBehaviour
 {
     public void IntMinus()
     {
-        Collision.arist--;
+        Collision.arist = 2;
     }
 
     public void SciMinus()
     {
-        Collision.scienc--;
+        Collision.scienc = 2;
     }
 
     public void MilMinus()
     {
-        Collision.military--;
+        Collision.military = 2;
     }
 }
