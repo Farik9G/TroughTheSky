@@ -32,6 +32,9 @@ public class startgame : MonoBehaviour
             unit.DamageLvl = 0;
             unit.maxHP = 100;
             unit.HpLvl = 0;
+            Collision.arist = 1;
+            Collision.scienc = 1;
+            Collision.military = 1;
             MainMenu.startgame = 10;
 
 
