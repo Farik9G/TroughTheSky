@@ -210,10 +210,10 @@ public class BattleSystem : MonoBehaviour
            // foods1.food1 += 15;
            // metals1.metal1 += 15;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            ObjectManager.fwood = 10;
-            ObjectManager.fmetal = 10;
+            ObjectManager.fwood = 15;
+            ObjectManager.fmetal = 15;
             ObjectManager.frebber = 10;
-            ObjectManager.ffood = 10;
+            ObjectManager.ffood = 15;
             ObjectManager.rand = 1;
 
 
