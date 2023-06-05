@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/DialogueEditor/Assets.meta
 guid: 09411f9dfed45894f82f1136072d6e3f
+========
+guid: 7f546cebc1e6ced4f9f9357bbec97b47
+>>>>>>>> origin/leikocit:Assets/DialogueEditor.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

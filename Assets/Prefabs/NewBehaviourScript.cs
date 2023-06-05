@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject smoke1;
+    public GameObject smoke2;
+    public GameObject smoke3;
+    public static bool n1=true;
+    public static bool n2 = true;
+    public static bool n3 = true;
+    public void smok1()
     {
-        
+        n1 = false;
+        Destroy(smoke1);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void smok2()
     {
-        
+        n2 = false;
+        Destroy(smoke2); ;
+    }
+    public void smok3()
+    {
+        n3 = false;
+        Destroy(smoke3);
     }
 }

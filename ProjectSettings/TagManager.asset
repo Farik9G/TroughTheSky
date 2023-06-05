@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Enemy
+  - Scientist
+  - Aristocrat
+  - Military
+>>>>>>> origin/leikocit
   layers:
   - Default
   - TransparentFX
@@ -11,9 +19,15 @@ TagManager:
   - 
   - Water
   - UI
+<<<<<<< HEAD
   - 
   - 
   - 
+=======
+  - Enemy
+  - Trees
+  - NPC
+>>>>>>> origin/leikocit
   - 
   - 
   - 
@@ -47,6 +61,21 @@ TagManager:
   - name: Cols
     uniqueID: 1422119493
     locked: 0
+  - name: Trees
+    uniqueID: 3378218687
+    locked: 0
+  - name: Ships
+    uniqueID: 1071960933
+    locked: 0
+<<<<<<< HEAD
+=======
+  - name: Enemy
+    uniqueID: 3047912249
+    locked: 0
   - name: Player
     uniqueID: 1075546611
     locked: 0
+  - name: Smoke
+    uniqueID: 867683337
+    locked: 0
+>>>>>>> origin/leikocit
