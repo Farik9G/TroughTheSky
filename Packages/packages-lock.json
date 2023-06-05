@@ -49,11 +49,11 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.ide.visualstudio": "2.0.16",
-        "com.unity.ide.rider": "3.0.16",
+        "com.unity.ide.visualstudio": "2.0.17",
+        "com.unity.ide.rider": "3.0.18",
         "com.unity.ide.vscode": "1.2.5",
         "com.unity.editorcoroutines": "1.0.0",
-        "com.unity.performance.profile-analyzer": "1.1.1",
+        "com.unity.performance.profile-analyzer": "1.2.2",
         "com.unity.test-framework": "1.1.31",
         "com.unity.testtools.codecoverage": "1.2.2"
       }
@@ -99,6 +99,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< Updated upstream
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
       "depth": 2,
@@ -106,8 +107,10 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> Stashed changes
     "com.unity.performance.profile-analyzer": {
-      "version": "1.1.1",
+      "version": "1.2.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -123,7 +126,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
+<<<<<<< Updated upstream
       "version": "12.1.8",
+=======
+      "version": "12.1.10",
+>>>>>>> Stashed changes
       "depth": 1,
       "source": "builtin",
       "dependencies": {
@@ -150,11 +157,19 @@
       }
     },
     "com.unity.render-pipelines.high-definition-config": {
+<<<<<<< Updated upstream
       "version": "12.1.8",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.render-pipelines.core": "12.1.8"
+=======
+      "version": "12.1.10",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "12.1.10"
+>>>>>>> Stashed changes
       }
     },
     "com.unity.searcher": {
@@ -164,6 +179,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< Updated upstream
     "com.unity.services.core": {
       "version": "1.6.0",
       "depth": 1,
@@ -175,6 +191,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> Stashed changes
     "com.unity.settings-manager": {
       "version": "1.0.3",
       "depth": 1,
@@ -183,11 +201,19 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.shadergraph": {
+<<<<<<< Updated upstream
       "version": "12.1.8",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.render-pipelines.core": "12.1.8",
+=======
+      "version": "12.1.10",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "12.1.10",
+>>>>>>> Stashed changes
         "com.unity.searcher": "4.9.1"
       }
     },
@@ -243,12 +269,21 @@
       }
     },
     "com.unity.visualeffectgraph": {
+<<<<<<< Updated upstream
       "version": "12.1.8",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.shadergraph": "12.1.8",
         "com.unity.render-pipelines.core": "12.1.8"
+=======
+      "version": "12.1.10",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "12.1.10",
+        "com.unity.render-pipelines.core": "12.1.10"
+>>>>>>> Stashed changes
       }
     },
     "com.unity.visualscripting": {
